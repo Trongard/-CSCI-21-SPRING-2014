@@ -16,7 +16,7 @@ void unittest (string s, char c);
 int main (int argc, char* argv[])
 {
     string userName;
-    char programmedBefore = z;
+    char programmedBefore = 'z';
     cout << "Welcome to the starter!";
     cout << "Please enter your name: ";
     cin >> userName;
@@ -52,7 +52,7 @@ int main (int argc, char* argv[])
 string greet (string name)
 {
 	// CODE HERE
-	cout << "Hello " << userName << "!\n" << endl;
+	return "Nice to meet you, " + name;
 }
 
 /*
@@ -65,6 +65,10 @@ string greet (string name)
  */
 string checkExperience (char hasExperience)
 {
+    if(hasExperience == 'Y')
+        return "Welcome back";
+    else
+        return "Get ready to have some fun";
 	// CODE HERE
 }
 
