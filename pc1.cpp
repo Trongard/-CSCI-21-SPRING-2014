@@ -65,10 +65,12 @@ string greet (string name)
  */
 string checkExperience (char hasExperience)
 {
-    if(hasExperience == 'Y')
+    if(toupper(hasExperience == 'Y'))
         return "Welcome back";
-    else
+    if else(toupper(hasExperience == 'N'))
         return "Get ready to have some fun";
+    else
+        return "Incorrect entry!";
 	// CODE HERE
 }
 
