@@ -17,7 +17,7 @@ int main (int argc, char* argv[])
 {
     string userName;
     char programmedBefore = 'z';
-    cout << "Welcome to the starter!";
+    cout << "Welcome to the starter!\n";
     cout << "Please enter your name: ";
     cin >> userName;
     cout << "Have you programmed in C++ before ('Y'es or 'N'o)?";
@@ -60,17 +60,15 @@ string greet (string name)
  * programming experience.
  * @param hasExperience a char ('Y'es or 'N'o) representing whether or 
  *        not a user has C++ programming experience
- * @return "Welcome back" when hasExperience is 'Y', else 'Get ready to 
+ * @return "Welcome back" when hasExperience is 'Y', else "Get ready to 
  *         have some fun"
  */
 string checkExperience (char hasExperience)
 {
     if(toupper(hasExperience == 'Y'))
         return "Welcome back";
-    if else(toupper(hasExperience == 'N'))
-        return "Get ready to have some fun";
     else
-        return "Incorrect entry!";
+        return "Get ready to have some fun";
 	// CODE HERE
 }
 
