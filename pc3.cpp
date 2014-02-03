@@ -51,6 +51,59 @@ int main (int argc, char* argv[])
 string goldilocks (string item, int number)
 {
 	// CODE HERE
+	if(item =="porridge")
+	{
+	    switch (number){
+	    case 1:
+	    return "This porridge is too hot";
+	    break;
+	    case 2:
+	    return "This porridge is too cold";
+	    break;
+	    case 3:
+	    return "This porridge is just right";
+	    break;
+	    default:
+	    return "This porridge is just right";
+	    break;
+	    }
+	}
+	
+	if(item =="chair")
+	{
+	    switch (number){
+	    case 1:
+	    return "This chair is too big";
+	    break;
+	    case 2:
+	    return "This chair is too big";
+	    break;
+	    case 3:
+	    return "This chair is just right";
+	    break;
+	    default:
+	    return "This chair is just right";
+	    break;
+	    }
+	}
+	
+	if(item =="bed")
+	{
+	    switch (number){
+	    case 1:
+	    return "This bed is too hard";
+	    break;
+	    case 2:
+	    return "This bed is too soft";
+	    break;
+	    case 3:
+	    return "This bed is just right";
+	    break;
+	    default:
+	    return "This bed is just right";
+	    break;
+	    }
+	}
 }
 
 /*
@@ -70,7 +123,60 @@ string goldilocks (string item, int number)
 int rockScissorPaper (char playerOne, char playerTwo)
 {
 	// CODE HERE
-	
+	switch(toupper(playerOne))
+	{
+	    case 'R':
+	    switch(toupper(playerTwo))
+	    {
+	        case 'R':
+	        return 3;
+	        break;
+	        case 'P':
+	        return 2;
+	        break;
+	        case 'S':
+	        return 1;
+	        break;
+	        default:
+	        return 0;
+	        break;
+	    }
+	    break;
+	    case 'P':
+	    switch(toupper(playerTwo))
+	    {
+	        case 'R':
+	        return 1;
+	        break;
+	        case 'P':
+	        return 3;
+	        break;
+	        case 'S':
+	        return 2;
+	        break;
+	        default:
+	        return 0;
+	        break;
+	    }
+	    break;
+	    case 'S':
+	    switch(toupper(playerTwo))
+	    {
+	        case 'R':
+	        return 2;
+	        break;
+	        case 'P':
+	        return 1;
+	        break;
+	        case 'S':
+	        return 3;
+	        break;
+	        default:
+	        return 0;
+	        break;
+	    }
+	    break;
+	}
 	// YOU MUST USE A SWITCH IN THIS FUNCTION
 }
 
@@ -82,6 +188,7 @@ int rockScissorPaper (char playerOne, char playerTwo)
 int asciiValue (char c)
 {
 	// CODE HERE
+	return static_cast<int>(c);
 }
 
 /*
@@ -92,6 +199,11 @@ int asciiValue (char c)
 string toLower (string input)
 {
 	// CODE HERE
+	for(int i=0;i<input.length();i++)
+	{
+	    input[i]=tolower(input[i]);
+	}
+	return input;
 }
 
 /*
@@ -102,6 +214,11 @@ string toLower (string input)
 string toUpper (string input)
 {
 	// CODE HERE
+	for(int i=0;i<input.length();i++)
+	{
+	    input[i]=toupper(input[i]);
+	}
+	return input;
 }
 
 /*
@@ -116,6 +233,7 @@ string toUpper (string input)
 char getCharacter (string input, int charIndex)
 {
 	// CODE HERE
+	return input[charIndex];
 }
 
 /*
