@@ -51,9 +51,9 @@ int main (int argc, char* argv[])
 string makeString (string label, double value, char separator)
 {
 	// CODE HERE
-	stringstream sout;
-	sout << label << separator << value;
-	return sout.str();
+	stringstream robout;
+	robout << label << " " << separator << " " << value;
+	return robout.str();
 }
 
 /*
@@ -67,6 +67,9 @@ string makeString (string label, double value, char separator)
 char stringToChar (string value)
 {
 	// CODE HERE
+	if(value.length() == 1)
+	    return value[0];
+	return '\0';
 }
 
 /*
@@ -104,6 +107,17 @@ int stringToInt (string value)
 double stringToDouble (string value)
 {
 	// CODE HERE
+	double robvalue = 0;
+	stringstream converter(value);
+	converter.exceptions(ios_base::failbit);
+
+	try
+	{
+		converter >> robvalue;
+	}
+	catch (ios_base::failure f) {}
+	
+	return robvalue;
 }
 
 /*
@@ -120,6 +134,10 @@ double stringToDouble (string value)
 bool stringToBool (string value)
 {
 	// CODE HERE
+	if(toupper(value[0] == 'T'))
+	    return true;
+	else
+	    return false;
 }
 
 /*
