@@ -1,3 +1,8 @@
+#
+# Grader comments 2014.02.05
+# Don't forget to update your makefile so your
+# latest source code will build properly.
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014
