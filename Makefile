@@ -5,6 +5,8 @@
 # Programmer: Robert McAnulty
 #
 
+# FLAGS = -Wall -pedantic -Wextra -Werror
+
 # Target for programming challenge 1
 # Date completed: 2-3-2014
 pc1: pc1.cpp

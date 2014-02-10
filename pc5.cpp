@@ -49,7 +49,7 @@ int getAnswer ();
  * Return the larger of the two parameter values. Should work correctly
  * if the values are equivalent.
  */
-int findLarger ();
+int findLarger (int n1, int n2);
 
 /*
  * function name: getStats
@@ -60,7 +60,7 @@ int findLarger ();
  * Return the length of string s. On return alphaCount should contain a count of the number of alphabetic 
  * characters in s, digitCount should contain a count of the number of digits in s.
  */
-int getStats ();
+int getStats (string s, int alphaCount, int digitCount);
 
 /*
  * function name: buildMessage
@@ -72,7 +72,8 @@ int getStats ();
  * true, convert s to all uppercase letters before concatenating it with "Message: ". If s is empty string, 
  * return "Message: empty".
  */
-string buildMessage ();
+string buildMessage (string s = "", bool allCaps = false);
+
 /* for unit testing -- do not alter */
 template <typename X, typename A>
 void btassert(A assertion);
@@ -101,6 +102,25 @@ int getAnswer ()
         return 42;
     }
     
+int findLarger (int n1, int n2)
+    {
+        if(n1 > n2)
+            return n1;
+        else if(n2 > n1)
+            return n2;
+        else
+            return 0;
+    }
+    
+int getStats (string s, int alphaCount, int digitCount)
+    {
+        
+    }
+    
+string buildMessage (string s, bool allCaps)
+    {
+        
+    }
 
 /*
  * Unit testing functions. Do not alter.
