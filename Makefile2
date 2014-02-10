@@ -7,7 +7,6 @@
 
 FLAGS = -Wall -pedantic -Wextra -Werror
 
-
 # Target for programming challenge 5
 # Date completed: 2-10-2014
 pc5: pc5.cpp
