@@ -48,7 +48,11 @@ void countCharacters (string ccstring, int& cc1, int& cc2)
 */
 string upAndDown (string uadstring)
     {
-        
+        for(int i=0;i<uadstring.length();i+2)
+            uadstring[i]=toupper(uadstring[i]);
+        for(int i=1;i<uadstring.length(;i+2))
+            uadstring[i]=tolower(uadstring[i]);
+        return uadstring;
     }
 
 /*
