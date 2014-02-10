@@ -60,7 +60,7 @@ int findLarger (int n1, int n2);
  * Return the length of string s. On return alphaCount should contain a count of the number of alphabetic 
  * characters in s, digitCount should contain a count of the number of digits in s.
  */
-int getStats (string s, int alphaCount, int digitCount);
+int getStats (string s, int& alphaCount, int& digitCount);
 
 /*
  * function name: buildMessage
@@ -106,20 +106,41 @@ int findLarger (int n1, int n2)
     {
         if(n1 > n2)
             return n1;
-        else if(n2 > n1)
-            return n2;
         else
-            return 0;
+            return n2;
     }
     
-int getStats (string s, int alphaCount, int digitCount)
+int getStats (string s, int& alphaCount, int& digitCount)
     {
-        
+        alphaCount = 0;
+        digitCount = 0;
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(isalpha(s[i]))
+                alphaCount++;
+            if(isdigit(s[i]))
+                digitCount++;
+        }
+        return s.length();
     }
     
+/* Return the string "Message: STRING", where STRING is replaced by the value of the parameter s. If allCaps is 
+ * true, convert s to all uppercase letters before concatenating it with "Message: ". If s is empty string, 
+ * return "Message: empty".
+ */
+ 
 string buildMessage (string s, bool allCaps)
     {
-        
+        if(s == "")
+            s = "empty";
+            
+        else if(allCaps)
+            for(int i=0;i<s.length();i++)
+            	{
+	                s[i]=toupper(s[i]);
+	            }
+	            
+        return "Message: " + s;
     }
 
 /*
