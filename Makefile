@@ -24,3 +24,13 @@ pc2: pc2.cpp
 # Date completed: 2-3-2014
 pc3: pc3.cpp
 	g++ -o pc3 pc3.cpp
+	
+# Target for programming challenge 4
+# Date completed: 2-5-2014
+pc4: pc4.cpp
+	g++ -o pc4 pc4.cpp
+	
+# Target for programming challenge 5
+# Date completed: 2-10-2014
+pc5: pc5.cpp
+	g++ -o pc5 pc5.cpp
