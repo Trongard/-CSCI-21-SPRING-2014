@@ -1,3 +1,18 @@
+#
+# Grader comments 2014.02.05
+# Don't forget to update your makefile so your
+# latest source code will build properly.
+#
+#
+# Grader comments 2014.02.10
+#
+# Add the $(FLAGS) stuff to this makefile and use
+# this makefile to build your code. Note that your
+# pc5.cpp wouldn't build with the warnings turned on.
+# I think Boyd will allow me to warn you this one time,
+# rather than giving you a zero. But be sure to
+# fix it for next time. --Rob
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014
