@@ -1,5 +1,10 @@
 /*
  * Programming Challenge 3
+ * Robert McAnulty
+ * Date created: 3 Feb 14
+ * Last date modified: 12 Feb 14
+ *
+ * Sources ?
  */
 #include <cassert>
 #include <cmath>

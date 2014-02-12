@@ -1,5 +1,10 @@
 /*
  * Programming Challenge 6
+ * Robert McAnulty
+ * Date created: 12 Feb 14
+ * Last date modified: 12 Feb 14
+ *
+ * Sources ?
  */
 #include <cassert>
 #include <iostream>

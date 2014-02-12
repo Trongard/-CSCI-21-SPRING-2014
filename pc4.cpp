@@ -1,5 +1,10 @@
 /*
  * Programming Challenge 4
+ * Robert McAnulty
+ * Date created: 5 Feb 14
+ * Last date modified: 12 Feb 14
+ *
+ * Sources ?
  */
 #include <cassert>
 #include <cstdlib>
