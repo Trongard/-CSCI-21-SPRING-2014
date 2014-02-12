@@ -6,7 +6,7 @@
  * Date created: 05Feb14
  * Last date modified: 05Feb14
  *
- * SOURCES: cpp_starter.txt, my pc5.cpp
+ * SOURCES: cpp_starter.txt, my pc5.cpp, my pc6.cpp 
  */
 
 #include <cassert>
