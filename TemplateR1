@@ -1,0 +1,10 @@
+bool f(int array[],int length,int index,int& result)
+    {
+        if(index>=0 && index<length)
+            {
+                result=array[index]*2;
+                return true;
+            }
+        else
+            return false;
+    }
