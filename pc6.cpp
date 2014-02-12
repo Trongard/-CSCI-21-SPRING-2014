@@ -4,7 +4,7 @@
  * Date created: 12 Feb 14
  * Last date modified: 12 Feb 14
  *
- * Sources ?
+ * Sources: programming challenge 6
  */
 #include <cassert>
 #include <iostream>
@@ -80,6 +80,55 @@ int main (int argc, char* argv[])
 
 // CODE HERE -- FUNCTION DEFINITIONS
 
+string prepareForDisplay (int values[], int size, char separator)
+    {
+        stringstream pfd;
+        for(int i=0;i<size;i++)
+            {
+                if(i<size-1)
+                    pfd << values[i] << separator;
+                else
+                    pfd << values[i];
+            }
+        return pfd.str();
+    }
+
+bool hasValue (int values[], int size, int value)
+    {
+        for(int i=0;i<size;i++)
+            if(value==values[i])
+                return true;
+        return false;
+    }
+
+int valueAt (int values[], int size, int index, bool& error)
+    {
+        if(index>=size || index<0)
+            {
+            error = true;
+            return 0;
+            }
+        else
+            {
+            error = false;
+            return values[index];
+            }
+    }
+
+int sum (int values[], int size)
+    {
+        int x = 0;
+        for(int i=0;i<size;i++)
+            x += values[i];
+        return x;
+    }
+
+void swapValues (int values[], int index1, int index2)
+    {
+        int temp = values[index1];
+        values[index1] = values[index2];
+        values[index2] = temp;
+    }
 /*
  * Unit testing functions. Do not alter.
  */

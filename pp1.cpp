@@ -6,7 +6,7 @@
  * Date created: 05Feb14
  * Last date modified: 05Feb14
  *
- * SOURCES: cpp_starter.txt
+ * SOURCES: cpp_starter.txt, my pc5.cpp
  */
 
 #include <cassert>
@@ -40,7 +40,16 @@ int main (int argc, char* argv[])
 */
 void countCharacters (string ccstring, int& cc1, int& cc2)
     {
-        
+        cc1 = 0;
+        cc2 = 0;
+        for(int i = 0; i < ccstring.length(); i++)
+        {
+            if(isalpha(ccstring[i]))
+                cc1++;
+            if(isdigit(ccstring[i]))
+                cc2++;
+        }
+        return ccstring.length();
     }
 
 /*
