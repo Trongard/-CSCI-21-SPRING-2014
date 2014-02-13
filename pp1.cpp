@@ -6,7 +6,7 @@
  * Date created: 05Feb14
  * Last date modified: 05Feb14
  *
- * SOURCES: cpp_starter.txt
+ * SOURCES: cpp_starter.txt, my pc5.cpp, my pc6.cpp 
  */
 
 #include <cassert>
@@ -35,22 +35,28 @@ int main (int argc, char* argv[])
 }
 
 /* My function definitions*/
-/* 
-    count the number of alphabetic characters and the number of numeric characters in a string (function name: countCharacters; parameters: string,     int&, int&; return value: void)
+/* count the number of alpha characters and the number of numeric characters in a string    (function name: countCharacters; parameters: string,     int&, int&; return value: void)
 */
 void countCharacters (string ccstring, int& cc1, int& cc2)
     {
-        
+        cc1 = 0;
+        cc2 = 0;
+        for(int i = 0; i < ccstring.length(); i++)
+        {
+            if(isalpha(ccstring[i]))
+                cc1++;
+            if(isdigit(ccstring[i]))
+                cc2++;
+        }
     }
 
-/*
-    capitalize/lowercase every other character in a string -- first character of the string should be capitalized, the second character lowercase,      etc. (function name: upAndDown; parameter: string; return value: string)
+/* capitalize/lowercase every other character in a string - first character of the string should be capitalized, the second character lowercase,      etc. (function name: upAndDown; parameter: string; return value: string)
 */
 string upAndDown (string uadstring)
     {
         for(int i=0;i<uadstring.length();i+2)
             uadstring[i]=toupper(uadstring[i]);
-        for(int i=1;i<uadstring.length(;i+2))
+        for(int i=1;i<uadstring.length();i+2)
             uadstring[i]=tolower(uadstring[i]);
         return uadstring;
     }
@@ -60,26 +66,40 @@ string upAndDown (string uadstring)
 */
 int countWords (string cwstring)
     {
-        
+        int count = 0;
+        for(int i=0;i<cwstring.length();i++)
+            if(isspace(cwstring[i]))
+                count++;
+            return count + 1;
     }
 
 /*
     compute the average of the values in an array; assume the function will never receive an array of size 0 (function name: computeAverage;            parameters: int[], int; return value: int;
 */
-int computeAverage (int[] ca1, int ca2);
+int computeAverage (int ca1[], int ca2)
+    {
+        int x = 0;
+        int y = 0;
+        for(int i=0;i<ca2;i++)
+            x += ca1[i];
+            y = x / ca2;
+        return y;
+    }
 
 /*
     identify the smallest value in an array; assume the function will never receive an array of size 0 (function name: findMinValue; parameters:        int[], int; return value: int)
 */
-int findMinValue (int[] fminv1, int fminv2);
-
+int findMinValue (int fminv1[], int fminv2)
+    {
+        return 0;
+    }
 /*
     identify the largest value in an array; assume the function will never receive an array of size 0 (function name: findMaxValue; parameters: int[], int; return value: int)
 */
-int findMaxValue (int[] fmaxv1, int fmaxv2);
-
-
-
+int findMaxValue (int fmaxv1[], int fmaxv2)
+    {
+        return 0;
+    }
 
 /*
  * Unit testing functions. Do not alter.
