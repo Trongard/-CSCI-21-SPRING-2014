@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Project #1
- * Our first project, creating functions to cover a variety of C++ code.
+ * Our first project, counting chars and ints in strings, upper/lower case for strings, count words in string, average an array, find minimum in an  * array and find maximum in an array.
  *
  * Robert McAnulty
  * Date created: 05Feb14
