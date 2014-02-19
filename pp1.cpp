@@ -27,7 +27,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main (int , char* [])
 {
 	unittest();
 	
@@ -41,7 +41,7 @@ void countCharacters (string ccstring, int& cc1, int& cc2)
     {
         cc1 = 0;
         cc2 = 0;
-        for(int i = 0; i < ccstring.length(); i++)
+        for(unsigned int i = 0; i < ccstring.length(); i++)
         {
             if(isalpha(ccstring[i]))
                 cc1++;
@@ -54,9 +54,9 @@ void countCharacters (string ccstring, int& cc1, int& cc2)
 */
 string upAndDown (string uadstring)
     {
-        for(int i=0;i<uadstring.length();i+=2)
+        for(unsigned int i=0;i<uadstring.length();i+=2)
             uadstring[i]=toupper(uadstring[i]);
-        for(int i=1;i<uadstring.length();i+=2)
+        for(unsigned int i=1;i<uadstring.length();i+=2)
             uadstring[i]=tolower(uadstring[i]);
         return uadstring;
     }
@@ -69,7 +69,7 @@ int countWords (string cwstring)
         int count = 0;
         if(cwstring!="")
             count++;
-        for(int i=0;i<cwstring.length();i++)
+        for(unsigned int i=0;i<cwstring.length();i++)
             if(isspace(cwstring[i]))
                 count++;
             return count;
@@ -94,7 +94,7 @@ int computeAverage (int ca1[], int ca2)
 int findMinValue (int fminv1[], int fminv2)
     {
         int temp = fminv1[0];
-        for(unsigned int i = 1; i < fminv2; i++){
+        for(int i = 1; i < fminv2; i++){
             if(fminv1[i] < temp)
                 temp = fminv1[i];
         }
@@ -106,7 +106,7 @@ int findMinValue (int fminv1[], int fminv2)
 int findMaxValue (int fmaxv1[], int fmaxv2)
     {
         int temp = fmaxv1[0];
-        for(unsigned int i = 1; i < fmaxv2; i++){
+        for(int i = 1; i < fmaxv2; i++){
             if(fmaxv1[i] > temp)
                 temp = fmaxv1[i];
         }
