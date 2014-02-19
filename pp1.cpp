@@ -54,9 +54,9 @@ void countCharacters (string ccstring, int& cc1, int& cc2)
 */
 string upAndDown (string uadstring)
     {
-        for(int i=0;i<uadstring.length();i+2)
+        for(int i=0;i<uadstring.length();i+=2)
             uadstring[i]=toupper(uadstring[i]);
-        for(int i=1;i<uadstring.length();i+2)
+        for(int i=1;i<uadstring.length();i+=2)
             uadstring[i]=tolower(uadstring[i]);
         return uadstring;
     }
@@ -67,10 +67,12 @@ string upAndDown (string uadstring)
 int countWords (string cwstring)
     {
         int count = 0;
+        if(cwstring!="")
+            count++;
         for(int i=0;i<cwstring.length();i++)
             if(isspace(cwstring[i]))
                 count++;
-            return count + 1;
+            return count;
     }
 
 /*
@@ -91,14 +93,24 @@ int computeAverage (int ca1[], int ca2)
 */
 int findMinValue (int fminv1[], int fminv2)
     {
-        return 0;
+        int temp = fminv1[0];
+        for(unsigned int i = 1; i < fminv2; i++){
+            if(fminv1[i] < temp)
+                temp = fminv1[i];
+        }
+        return temp;
     }
 /*
     identify the largest value in an array; assume the function will never receive an array of size 0 (function name: findMaxValue; parameters: int[], int; return value: int)
 */
 int findMaxValue (int fmaxv1[], int fmaxv2)
     {
-        return 0;
+        int temp = fmaxv1[0];
+        for(unsigned int i = 1; i < fmaxv2; i++){
+            if(fmaxv1[i] > temp)
+                temp = fmaxv1[i];
+        }
+        return temp;
     }
 
 /*
