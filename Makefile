@@ -34,3 +34,13 @@ pc5: pc5.cpp
 # Date completed: 2-12-2014
 pc6: pc6.cpp
 	g++ -o pc6 pc6.cpp
+	
+# Target for programming challenge 7
+# Date completed: 2-19-2014
+pc7: pc7.cpp
+	g++ -o pc7 pc7.cpp
+	
+# Target for programming project 1
+# Date completed: 2-19-2014
+pp1: pp1.cpp
+	g++ -o pp1 pp1.cpp

@@ -41,3 +41,8 @@ pc6: pc6.cpp
 # Date completed: 2-19-2014
 pc7: pc7.cpp
 	g++ $(FLAGS) -o pc7 pc7.cpp
+	
+# Target for programming project 1
+# Date completed: 2-19-2014
+pp1: pp1.cpp
+	g++ $(FLAGS) -o pp1 pp1.cpp
