@@ -84,7 +84,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main (int , char* [])
 {
 	unittest();
 	
@@ -119,7 +119,7 @@ int getStats (string s, int& alphaCount, int& digitCount)
     {
         alphaCount = 0;
         digitCount = 0;
-        for(int i = 0; i < s.length(); i++)
+        for(unsigned int i = 0; i < s.length(); i++)
         {
             if(isalpha(s[i]))
                 alphaCount++;
@@ -140,7 +140,7 @@ string buildMessage (string s, bool allCaps)
             s = "empty";
             
         else if(allCaps)
-            for(int i=0;i<s.length();i++)
+            for(unsigned int i=0;i<s.length();i++)
             	{
 	                s[i]=toupper(s[i]);
 	            }
