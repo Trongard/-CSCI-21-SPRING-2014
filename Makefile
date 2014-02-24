@@ -44,3 +44,8 @@ pc7: pc7.cpp
 # Date completed: 2-19-2014
 pp1: pp1.cpp
 	g++ -o pp1 pp1.cpp
+
+# Target for programming challenge 8
+# Date completed: 2-24-2014
+pc8: pc8.cpp
+	g++ -o pc8 pc8.cpp
