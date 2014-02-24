@@ -58,7 +58,41 @@ int main (int argc, char* argv[])
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
-
+void processArguments(int argc, char* argv[])
+{
+    int nextline = 0;
+    for (unsigned int i=1; i<argc; i++)
+    {
+        stringstream arg_v_str(argv[i]);
+        arg_v_str >> nextline;
+        switch (nextline)
+        {
+            case 10:
+                onTen();
+                break;
+            
+            case 20:
+                onTwenty();
+                break;
+            
+            case 30:
+                onThirty();
+                break;
+            
+            case 40:
+                onForty();
+                break;
+            
+            case 50:
+                onFifty();
+                break;
+            
+            default:
+                onError();
+                break;
+        }
+        }
+}
 /*
  * Unit testing functions. Do not alter.
  */
