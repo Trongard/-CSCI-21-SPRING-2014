@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Project #2
- * <descr>
+ * Using static and dynamic arrays to get an introduction to object-oriented programming.
  *
  * Robert McAnulty
  * Date created: 24Feb14
