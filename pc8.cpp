@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Challenge #8
- * Our first project, counting chars and ints in strings, upper/lower case for strings, count words in string, average an array, find minimum in an  * array and find maximum in an array.
+ * Passing arguments to the program via the command line
  *
  * Robert McAnulty
  * Date created: 24Feb14
