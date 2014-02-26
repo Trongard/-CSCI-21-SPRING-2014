@@ -3,6 +3,9 @@
 # Your code for pc6 doesn't compile with the flags turned on.
 # I have to give you a zero. Sorry. --Rob
 #
+# This makefile doesn't have the warnings-as-errors flags
+# turned on. I can't use it for building your projects.
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014

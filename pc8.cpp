@@ -7,6 +7,11 @@
  * Last date modified: 24Feb14
  *
  * SOURCES: challenge-8.cpp
+ *
+ * Grader comments 2014.02.26
+ *
+ * This code won't build with warnings-as-errors turned on.
+ *
  */
  
 #include <cassert>
