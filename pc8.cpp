@@ -66,7 +66,7 @@ int main (int argc, char* argv[])
 void processArguments(int argc, char* argv[])
 {
     int nextline = 0;
-    for (unsigned int i=1; i<argc; i++)
+    for (int i=1; i<argc; i++)
     {
         stringstream arg_v_str(argv[i]);
         arg_v_str >> nextline;
