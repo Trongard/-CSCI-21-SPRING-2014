@@ -73,6 +73,45 @@ int main (int argc, char* argv[])
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
+float Converter::convertTemperature (float temp, char targetUnits)
+{
+    if(toupper(targetUnits) == 'M')
+        fahrenheitToCelsius (float temp);
+    if else(toupper(targetUnits) == 'I')
+        celsiusToFahrenheit (float temp);
+    else
+        return temp;
+}
+
+float Converter::convertDistance (float distance, char targetUnits)
+{
+    if(toupper(targetUnits) == 'M')
+        feetToMeters (float distance);
+    if else(toupper(targetUnits) == 'I')
+        metersToFeet (float distance);
+    else
+        return distance;
+}
+
+float Converter::fahrenheitToCelsius (float temp)
+{
+    return (temp - 32) / 1.8;
+}
+
+float Converter::celsiusToFahrenheit (float temp)
+{
+    return (temp * 1.8) + 32;
+}
+
+float Converter::feetToMeters (float distance)
+{
+    return (distance * .3048);
+}
+
+float Converter::metersToFeet (float distance)
+{
+    return (distance * 3.28084);
+}
 
 /*
  * Unit testing functions. Do not alter.
