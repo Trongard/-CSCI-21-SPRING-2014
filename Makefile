@@ -56,3 +56,8 @@ pc8: pc8.cpp
 # Date completed: 2-26-2014
 pc9: pc9.cpp
 	g++ $(FLAGS) -o pc9 pc9.cpp
+	
+# Target for programming challenge 10
+# Date completed: 3-3-2014
+pc10: pc10.cpp
+	g++ $(FLAGS) -o pc10 pc10.cpp

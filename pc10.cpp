@@ -65,7 +65,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -76,9 +76,9 @@ int main (int argc, char* argv[])
 float Converter::convertTemperature (float temp, char targetUnits)
 {
     if(toupper(targetUnits) == 'M')
-        fahrenheitToCelsius (float temp);
-    if else(toupper(targetUnits) == 'I')
-        celsiusToFahrenheit (float temp);
+        return fahrenheitToCelsius (temp);
+    else if(toupper(targetUnits) == 'I')
+        return celsiusToFahrenheit (temp);
     else
         return temp;
 }
@@ -86,9 +86,9 @@ float Converter::convertTemperature (float temp, char targetUnits)
 float Converter::convertDistance (float distance, char targetUnits)
 {
     if(toupper(targetUnits) == 'M')
-        feetToMeters (float distance);
-    if else(toupper(targetUnits) == 'I')
-        metersToFeet (float distance);
+        return feetToMeters (distance);
+    else if(toupper(targetUnits) == 'I')
+        return metersToFeet (distance);
     else
         return distance;
 }
