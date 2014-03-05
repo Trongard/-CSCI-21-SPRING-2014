@@ -30,33 +30,19 @@ class Prize
 		 *        at the end of name
 		 * @param newValue unsigned int containing a value for this Prize; default argument is 0
 		 */
-	    Prize (string newName = "no name!", unsigned int newValue = 0)
-	    {
-	        value = newValue;
-	        if(newValue > 100)
-	            {
-	            for(unsigned int i=0;i<newName.length();i++)
-	                newName[i] = toupper(newName[i]);
-	            newName += '!';
-	            }
-	        name = newName;
-	    }
+	    Prize (string newName = "no name!", unsigned int newValue = 0);
+	    
 		/*
 		 * Get this Prize's name
 		 * @return a string containing this Prize's name
 		 */
-		string getName
-		{
-		    return name;
-		}
+		string getName () const;
+		
 		/*
 		 * Get this Prize's value
 		 * @return an unsigned int containing this Prize's value
 		 */
-		unsigned int getValue
-		{
-		    return value;
-		}
+		unsigned int getValue () const;
 		
 	private:
 	
@@ -80,17 +66,20 @@ class SecretDoor
 		 * @param newPrize Prize containing a Prize that is "hidden" behind this secret door; default argument 
 		 *        is Prize()
 		 */
-		
+		SecretDoor (unsigned int newNumber = 1, Prize newPrize = Prize());
+
 		/*
 		 * Get this SecretDoor's number.
 		 * @return an unsigned int containing this SecretDoor's number
 		 */
-		
+		unsigned int getNumber () const;
+
 		/*
 		 * Get this SecretDoor's Prize.
 		 * @return the Prize, by reference, "hidden behind" this SecretDoor
 		 */
-		
+		Prize getPrize () const;
+
 	private:
 	
 		unsigned int number;
@@ -102,7 +91,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -110,8 +99,43 @@ int main (int argc, char* argv[])
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS FOR PRIZE; USE INITIALIZER SECTION FOR CONSTRUCTOR
+Prize::Prize (string newName, unsigned int newValue)
+{
+    value = newValue;
+    if(newValue > 100)
+        {
+        for(unsigned int i=0;i<newName.length();i++)
+            newName[i] = toupper(newName[i]);
+        newName += '!';
+        }
+    name = newName;
+}
 
+string Prize::getName () const
+{
+	return name;
+}
+
+unsigned int Prize::getValue () const
+{
+    return value;
+}
 // CODE HERE -- FUNCTION DEFINITIONS FOR SECRETDOOR; USE INITIALIZER SECTION FOR CONSTRUCTOR
+SecretDoor::SecretDoor (unsigned int newNumber, Prize newPrize)
+{
+    number = newNumber;
+	prize = newPrize;
+}
+
+unsigned int SecretDoor::getNumber () const
+{
+    return number;
+}
+
+Prize SecretDoor::getPrize () const
+{
+    return prize;
+}
 
 /*
  * Unit testing functions. Do not alter.
