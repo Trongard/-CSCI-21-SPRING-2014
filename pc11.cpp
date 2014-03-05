@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Challenge #11
- * Creating a measurement conversion program.
+ * Creating a class for games involving rewards and tasks.
  *
  * Robert McAnulty
  * Date created: 05Mar14
@@ -30,16 +30,33 @@ class Prize
 		 *        at the end of name
 		 * @param newValue unsigned int containing a value for this Prize; default argument is 0
 		 */
-	
+	    Prize (string newName = "no name!", unsigned int newValue = 0)
+	    {
+	        value = newValue;
+	        if(newValue > 100)
+	            {
+	            for(unsigned int i=0;i<newName.length();i++)
+	                newName[i] = toupper(newName[i]);
+	            newName += '!';
+	            }
+	        name = newName;
+	    }
 		/*
 		 * Get this Prize's name
 		 * @return a string containing this Prize's name
 		 */
-		
+		string getName
+		{
+		    return name;
+		}
 		/*
 		 * Get this Prize's value
 		 * @return an unsigned int containing this Prize's value
 		 */
+		unsigned int getValue
+		{
+		    return value;
+		}
 		
 	private:
 	
