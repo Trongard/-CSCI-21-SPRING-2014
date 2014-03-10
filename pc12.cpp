@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Challenge #12
- * Creating a measurement conversion program.
+ * Creating a dynamic array and using pointers.
  *
  * Robert McAnulty
  * Date created: 10Mar14
@@ -76,6 +76,65 @@ int main ()
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
+
+int* makeDynoIntArray (unsigned int size)
+{
+    int* dynoArray = NULL;
+    dynoArray = new int[size];
+    
+    return dynoArray;
+}
+
+void clearDynoIntArray (int*& theArray)
+{
+    delete [] theArray;
+    theArray = NULL;
+}
+
+int sum (int* theArray, unsigned int arraySize)
+{
+    if(theArray == NULL)
+        {
+            throw ArrayException("NULL ARRAY REFERENCE");
+            return 0;
+        }
+    sum = 0;
+    for(unsigned int i=0; i<arraySize; i++)
+        sum += theArray[i];
+    return sum;
+}
+
+int max (int* theArray, unsigned int arraySize)
+{
+    if(theArray == NULL)
+        {
+            throw ArrayException("NULL ARRAY REFERENCE");
+            return 0;
+        }
+    int max = theArray[0];
+    for(unsigned int i=1; i<arraySize; i++)
+    {
+        if(max < theArray[i])
+            max = theArray[i];
+    }
+    return max;
+}
+
+int min (int* theArray, unsigned int arraySize)
+{
+    if(theArray == NULL)
+        {
+            throw ArrayException("NULL ARRAY REFERENCE");
+            return 0;
+        }
+    int min = theArray[0];
+    for(unsigned int i=1; i<arraySize; i++)
+    {
+        if(min > theArray[i])
+            min = theArray[i];
+    }
+    return min;
+}
 
 /*
  * Unit testing functions. Do not alter.
