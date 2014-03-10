@@ -98,10 +98,10 @@ int sum (int* theArray, unsigned int arraySize)
             throw ArrayException("NULL ARRAY REFERENCE");
             return 0;
         }
-    sum = 0;
+    int newSum = 0;
     for(unsigned int i=0; i<arraySize; i++)
-        sum += theArray[i];
-    return sum;
+        newSum += theArray[i];
+    return newSum;
 }
 
 int max (int* theArray, unsigned int arraySize)
