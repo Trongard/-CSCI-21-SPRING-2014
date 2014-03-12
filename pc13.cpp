@@ -6,7 +6,7 @@
  * Date created: 12Mar14
  * Last date modified: 12Mar14
  *
- * SOURCES: challenge-13.cpp
+ * SOURCES: challenge-13.cpp, my pc5.cpp
  */
  
 #include <cassert>
@@ -82,29 +82,61 @@ int main ()
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
+
 string* makeDynoString (string contents)
 {
-    
+    string* ds1 = new string(contents);
+    return ds1;
 }
 
 void clearDynoString (string*& theString)
 {
-    
+    if(theString != NULL)
+        {
+        delete theString;
+        theString = NULL;
+        }
 }
 
 unsigned int countChars (string* theString, unsigned int& alpha, unsigned int& num)
 {
-    
+    if(theString == NULL)
+        throw ArrayException("NULL STRING REFERENCE");
+    else
+        alpha = 0;
+        num = 0;
+        for(unsigned int i = 0; i < (*theString).length(); i++)
+        {
+            if(isalpha((*theString)[i]))
+                alpha++;
+            if(isdigit((*theString)[i]))
+                num++;
+        }
+        return (*theString).length();
 }
 
 bool findWord (string* theString, string theWord)
 {
-    
+    if(theString == NULL)
+        throw ArrayException("NULL STRING REFERENCE");
+    else
+        if((*theString).find(theWord) != string::npos)
+            return true;
+        else
+            return false;
 }
 
 bool replaceWord (string* theString, string oldWord, string newWord)
 {
-    
+    if(theString == NULL)
+        throw ArrayException("NULL STRING REFERENCE");
+    else
+        if(findWord(theString, oldWord)){
+            theString->replace(theString->find(oldWord), oldWord.length(), newWord);
+            return true;
+        }
+        else
+            return false;
 }
 
 /*
