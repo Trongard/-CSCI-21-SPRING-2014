@@ -106,6 +106,14 @@ int sum (int* theArray, unsigned int arraySize)
 
 int max (int* theArray, unsigned int arraySize)
 {
+	//
+	// Grader comments 2014.03.13 
+	//
+	// Be consistent with your indentations. Note the difference
+	// between the block at lines 118 - 121 and the block at
+	// lines 124 - 127. Best to use the latter style, but more
+	// important to be consistent. No points deducted (this time).
+	//
     if(theArray == NULL)
         {
             throw ArrayException("NULL ARRAY REFERENCE");
