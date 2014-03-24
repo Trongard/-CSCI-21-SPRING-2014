@@ -41,7 +41,7 @@ void btassert(A assertion);
 void unittest ();
 bool compareArrays (int arrayOne[], int arrayTwo[], unsigned int size);
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -49,6 +49,40 @@ int main (int argc, char* argv[])
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
+void bubbleSort (int theArray[], unsigned int size)
+{
+    unsigned int sizeUnsortArray = size;
+    bool swapped = false;
+    
+    do{
+        swapped = false;
+        
+        for(unsigned int i=1; i <= (sizeUnsortArray - 1); ++i){
+            unsigned int LHS = i-1;
+            unsigned int RHS = i;
+            
+            if(theArray[LHS] > theArray[RHS]){
+            swapValues (theArray, LHS, RHS);
+            swapped = true;
+            }
+        }
+        --sizeUnsortArray;
+    } while(swapped == true);
+}
+
+void selectionSort (int theArray[], unsigned int size)
+{
+    cout << theArray[0] << size << endl;
+}
+
+void swapValues (int values[], int index1, int index2)
+{
+    int const temp = values[index2];
+    
+    values[index2] = values[index1];
+    
+    values[index1] = temp;
+}
 
 /*
  * Unit testing functions. Do not alter.
