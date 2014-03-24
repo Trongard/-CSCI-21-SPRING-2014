@@ -85,8 +85,8 @@ int main ()
 
 string* makeDynoString (string contents)
 {
-    string* ds1 = new string(contents);
-    return ds1;
+    string* dynoStringOne = new string(contents);
+    return dynoStringOne;
 }
 
 void clearDynoString (string*& theString)
