@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+using namespace std;
 
 class Prize
 {
@@ -9,6 +11,8 @@ class Prize
         unsigned int getValue () const;
         void setName(string itemName);
         void setValue(unsigned int itemValue);
+        ~Prize();
+        friend bool operator ==(Prize left, Prize right);
     
     private:
         string prizeName;
