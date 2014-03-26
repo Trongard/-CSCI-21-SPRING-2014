@@ -1,10 +1,10 @@
 /*
  * CSCI 21 Programming Challenge #14
- * .
+ * Using various sort functions.
  *
  * Robert McAnulty
  * Date created: 24Mar14
- * Last date modified: 24Mar14
+ * Last date modified: 26Mar14
  *
  * SOURCES: challenge-14.cpp
  */
