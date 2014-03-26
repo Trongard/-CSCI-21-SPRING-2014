@@ -73,6 +73,16 @@ void bubbleSort (int theArray[], unsigned int size)
 void selectionSort (int theArray[], unsigned int size)
 {
     cout << theArray[0] << size << endl;
+    for(unsigned int i = 0; i < size; ++i){
+        unsigned int swapTarget = i;
+        unsigned int swapSource = i;
+        for(unsigned int j = i + 1; j < size; ++j){
+            if(theArray[j] < theArray[swapSource]){
+                swapSource = j;
+            }
+        }
+    swapValues(theArray, swapTarget, swapSource);
+    }
 }
 
 void swapValues (int values[], int index1, int index2)
