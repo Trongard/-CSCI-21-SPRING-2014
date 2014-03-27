@@ -1,9 +1,11 @@
 #pragma once
+#include <string>
+using namespace std;
 
 class Box
 {
     Public:
-        Box (unsigned int boxNumber, string boxColor, unsigned int prizeCapacity, unsigned int prizeCount);
+        Box ();
         Box (unsigned int boxNumber=0, string boxColor="NO COLOR", unsigned int prizeCapacity=5, unsigned int prizeCount=0);
         unsigned int getPrizeCapacity () const;
         unsigned int getPrizeCount () const;
@@ -11,6 +13,10 @@ class Box
         string getBoxColor () const;
         void setBoxNumber;
         void setBoxColor;
+        ~Box();
+        bool addPrize(Prize prize);
+        Prize& getPrize(unsigned int index);
+        Prize removePrize(unsigned int index);
         
     Private:
         unsigned int boxNumber;
