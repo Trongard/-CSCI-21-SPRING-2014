@@ -6,7 +6,7 @@
  * Date created: 31Mar14
  * Last date modified: 31Mar14
  *
- * SOURCES: challenge-15.cpp
+ * SOURCES: challenge-15.cpp, MadScientist.cpp
  */
 #include <cassert>
 #include <iostream>
@@ -110,7 +110,8 @@ int main ()
  */
 ShoppingList::ShoppingList ()
 {
-    
+    maxItems = 10;
+    itemCount = 0;
 }
 
 /*
@@ -120,7 +121,7 @@ ShoppingList::ShoppingList ()
  */
 unsigned int ShoppingList::getMaxItems () const
 {
-    
+    return maxItems;
 }
 
 /*
@@ -130,7 +131,7 @@ unsigned int ShoppingList::getMaxItems () const
  */
 unsigned int ShoppingList::getItemCount () const
 {
-    
+    return itemCount;
 }
 
 /*
@@ -141,7 +142,16 @@ unsigned int ShoppingList::getItemCount () const
  */
 bool ShoppingList::addItem (string theItem)
 {
-    
+    if(itemCount < maxItems)
+    {
+        items[itemCount] = theItem;
+        itemCount++;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 /*
@@ -154,7 +164,14 @@ bool ShoppingList::addItem (string theItem)
  */
 string ShoppingList::getItem (unsigned int index) const
 {
-    
+    if(index < maxItems)
+    {
+        return items[index];
+    }
+    else
+    {
+        throw ArrayException("INVALID ARRAY INDEX");
+    }
 }
 
 /*
@@ -166,7 +183,14 @@ string ShoppingList::getItem (unsigned int index) const
  */
 string& ShoppingList::getItem (unsigned int index)
 {
-    
+    if(index < maxItems)
+    {
+        return items[index];
+    }
+    else
+    {
+        throw ArrayException("INVALID ARRAY INDEX");
+    }
 }
 
 /*
@@ -179,7 +203,15 @@ string& ShoppingList::getItem (unsigned int index)
  */
 string ShoppingList::removeItem (unsigned int index)
 {
+    items[index] = "";
+    itemCount--;
     
+    for (unsigned int i=index; i<itemCount; ++i)
+        {
+            items[i] = items[i+1];
+        }
+        
+    items[itemCount] = "";
 }
 
 /*
