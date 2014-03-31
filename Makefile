@@ -89,3 +89,43 @@ pc13: pc13.cpp
 # Date completed: 3-24-2014
 pc14: pc14.cpp
 	g++ $(FLAGS) -o pc14 pc14.cpp
+
+# Target for programming challenge 15
+# Date completed: 3-31-2014
+pc15: pc15.cpp
+	g++ $(FLAGS) -o pc15 pc15.cpp
+
+# Target for programming challenge 16
+# Date completed: 3-24-2014
+# pc16: pc16.cpp
+# 	g++ $(FLAGS) -o pc16 pc16.cpp
+
+# Target for programming challenge 17
+# Date completed: 3-24-2014
+# pc17: pc17.cpp
+# 	g++ $(FLAGS) -o pc17 pc17.cpp
+
+# Target for programming challenge 18
+# Date completed: 3-24-2014
+# pc18: pc18.cpp
+# 	g++ $(FLAGS) -o pc18 pc18.cpp
+
+# Target for programming challenge 19
+# Date completed: 3-24-2014
+# pc19: pc19.cpp
+# 	g++ $(FLAGS) -o pc19 pc19.cpp
+
+# Target for programming challenge 20
+# Date completed: 3-24-2014
+# pc20: pc20.cpp
+# 	g++ $(FLAGS) -o pc20 pc20.cpp
+
+# Target for programming challenge 21
+# Date completed: 3-24-2014
+# pc21: pc21.cpp
+# 	g++ $(FLAGS) -o pc21 pc21.cpp
+
+# Target for programming challenge 22
+# Date completed: 3-24-2014
+# pc22: pc22.cpp
+# 	g++ $(FLAGS) -o pc22 pc22.cpp
