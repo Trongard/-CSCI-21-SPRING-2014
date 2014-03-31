@@ -203,6 +203,7 @@ string& ShoppingList::getItem (unsigned int index)
  */
 string ShoppingList::removeItem (unsigned int index)
 {
+    string temp = items[index];
     items[index] = "";
     itemCount--;
     
@@ -212,6 +213,7 @@ string ShoppingList::removeItem (unsigned int index)
         }
         
     items[itemCount] = "";
+    return temp;
 }
 
 /*
