@@ -90,7 +90,7 @@ pc15: pc15.cpp
 # Target for programming challenge 16
 # Date completed: 4-2-2014
 pc16: pc16.cpp
- 	g++ $(FLAGS) -o pc16 pc16.cpp
+	g++ $(FLAGS) -o pc16 pc16.cpp
 
 # Target for programming challenge 17
 # Date completed: 3-24-2014
