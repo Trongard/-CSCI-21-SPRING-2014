@@ -25,11 +25,33 @@ void unittest ();
 int main ()
 {
     unittest();
+    CinReader okra;
 	
     // CODE HERE -- INTERACTIVE TEST
     //
     // add additional functions as needed to support interactive test
-	// cout << ""
+	cout << "Main Menu" << endl
+	     << "What would you like to test?" << endl 
+	     << endl 
+	     << endl 
+	     << endl;
+	cout << "[1] - Box" << endl
+	     << "[2] - Prize" << endl
+	     << "[3] - Unittest" << endl
+	     << "[0] - Exit" << endl
+	     << "Make a selection: ";
+	     
+	     switch(okra.readInt(0,3)){
+	         case 0:
+	            break;
+	         case 1:
+	            break;
+	         case 2:
+	            break;
+	         case 3:
+	            unittest();
+	            break;
+	     }
 	
 	
 	
