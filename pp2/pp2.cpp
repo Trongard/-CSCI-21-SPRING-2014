@@ -11,7 +11,7 @@
  
 #include "box.h"
 #include "prize.h"
-
+#include "CinReader.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -22,13 +22,16 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
     unittest();
 	
     // CODE HERE -- INTERACTIVE TEST
     //
     // add additional functions as needed to support interactive test
+	// cout << ""
+	
+	
 	
     return 0;
 }

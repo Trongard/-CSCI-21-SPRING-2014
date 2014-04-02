@@ -11,12 +11,12 @@ Box::Box ()
     prizes=new Prize[prizeCapacity];
 }
 
-Box::Box (unsigned int newBoxNumber, string newBoxColor, unsigned int newPrizeCapacity, unsigned int newPrizeCount)
+Box::Box (unsigned int newBoxNumber, string newBoxColor, unsigned int newPrizeCapacity)
 {
     boxNumber=newBoxNumber;
     boxColor=newBoxColor;
     prizeCapacity=newPrizeCapacity;
-    prizeCount=newPrizeCount;
+    prizeCount=0;
     prizes=new Prize[prizeCapacity];
 }
 
@@ -65,6 +65,7 @@ bool Box::addPrize(Prize prize)
                 return true;
             }
         }
+        return false;
     }
     else
     {
@@ -87,7 +88,7 @@ Prize Box::removePrize(unsigned int index)
 {
     if(prizeCapacity > index){
         Prize temp = prizes[index];
-        if(temp != scratch){
+        if(!(temp == scratch)){
             --prizeCount;
         }
         prizes[index] = scratch;
