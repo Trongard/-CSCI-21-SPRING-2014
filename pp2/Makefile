@@ -1,9 +1,9 @@
 FLAGS = -Wall -Wextra -Werror -pedantic
 
-project-2: Prize.o Box.o project2.o
-	g++ $(FLAGS) Prize.o Box.o project2.o -o project-2
+project-2: Prize.o Box.o project-2.o
+	g++ $(FLAGS) Prize.o Box.o project-2.o -o project-2
 
-project-2.o: pp2.cpp
+project-2.o: pp2.cpp 
 	g++ -c $(FLAGS) pp2.cpp -o project-2.o
 
 Box.o: box.h box.cpp
@@ -16,4 +16,5 @@ clean:
 	rm -f *.o
 	
 cleanall: clean
-	rm -f project-2
+	clean
+	rm -f project

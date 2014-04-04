@@ -1,41 +1,41 @@
 #include "prize.h"
 
-Prize::Prize(string itemName, unsigned int itemValue)
+
+Prize::Prize(string newItemName, unsigned int newItemValue)
 {
-    
+    prizeName = newItemName;
+    prizeValue = newItemValue;
 }
 
-Prize::Prize(string itemName="NO NAME", unsigned int itemValue=0)
+string Prize::getPrizeName () const
 {
-    
+    return prizeName;
 }
 
-string Prize::getName () const
+unsigned int Prize::getPrizeValue () const
 {
-    
+    return prizeValue;
 }
 
-unsigned int Prize::getValue () const
+void Prize::setPrizeName(string itemName)
 {
-    
+    prizeName = itemName;
 }
 
-void Prize::setName(string itemName)
+void Prize::setPrizeValue(unsigned int itemValue)
 {
-    
-}
-
-void Prize::setValue(unsigned int itemValue)
-{
-    
+    prizeValue = itemValue;
 }
 
 Prize::~Prize()
 {
-    
+    // Left blank cause Boyd said!
 }
 
-friend bool operator ==(Prize left, Prize right)
+bool operator ==(Prize left, Prize right)
 {
-    
+    if(left.prizeValue == right.prizeValue && left.prizeName == right.prizeName){
+        return true;
+    }
+    return false;
 }

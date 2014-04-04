@@ -203,17 +203,24 @@ string& ShoppingList::getItem (unsigned int index)
  */
 string ShoppingList::removeItem (unsigned int index)
 {
-    string temp = items[index];
-    items[index] = "";
-    itemCount--;
-    
-    for (unsigned int i=index; i<itemCount; ++i)
-        {
-            items[i] = items[i+1];
-        }
+    if(newMaxItems >= 1)
+    {
+        string temp = items[index];
+        items[index] = "";
+        itemCount--;
         
-    items[itemCount] = "";
-    return temp;
+        for (unsigned int i=index; i<itemCount; ++i)
+            {
+                items[i] = items[i+1];
+            }
+            
+        items[itemCount] = "";
+        return temp;
+    }
+    else
+    {
+        throw ArrayException("INVALID ARRAY INDEX");
+    }
 }
 
 /*

@@ -4,14 +4,14 @@
  *
  * Robert McAnulty
  * Date created: 24Feb14
- * Last date modified: 26Mar14
+ * Last date modified: 04Apr14
  *
  * SOURCES: project-2-unit-test.cpp
  */
  
 #include "box.h"
 #include "prize.h"
-
+#include "CinReader.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -22,13 +22,39 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
     unittest();
+    CinReader okra;
 	
     // CODE HERE -- INTERACTIVE TEST
     //
     // add additional functions as needed to support interactive test
+	cout << "Main Menu" << endl
+	     << "What would you like to test?" << endl 
+	     << endl 
+	     << endl 
+	     << endl;
+	cout << "[1] - Box" << endl
+	     << "[2] - Prize" << endl
+	     << "[3] - Unittest" << endl
+	     << "[0] - Exit" << endl
+	     << "Make a selection: ";
+	     
+	     switch(okra.readInt(0,3)){
+	         case 0:
+	            break;
+	         case 1:
+	            break;
+	         case 2:
+	            break;
+	         case 3:
+	            unittest();
+	            break;
+	     }
+	     
+	
+	
 	
     return 0;
 }
