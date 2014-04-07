@@ -13,7 +13,7 @@ class SLNode
     	virtual ~SLNode();
     	
     	void setContents (int newContents);
-    	void setNextNode (SLNode* newNextNode)
+    	void setNextNode (SLNode* newNextNode);
     	
     	int getContents () const;
     	SLNode* getNextNode () const;
