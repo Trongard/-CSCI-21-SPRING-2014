@@ -5,7 +5,7 @@
 # Programmer: Robert McAnulty
 #
 
-FLAGS = -Wall -pedantic -Wextra -Werror
+FLAGS = -Wall -pedantic -Wextra -Werror -Wno-newline-eof
 
 # Target for programming challenge 1
 # Date completed: 2-3-2014

@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra -Werror -pedantic
+FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
 pc-18: SList.o pc-18.o
 	g++ $(FLAGS) SList.o pc-18.o -o pc-18
