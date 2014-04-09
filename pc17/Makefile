@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra -Werror -pedantic
+FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
 pc-17: SLNode.o pc-17.o
 	g++ $(FLAGS) SLNode.o pc-17.o -o pc-17

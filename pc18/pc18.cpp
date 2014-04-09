@@ -10,6 +10,7 @@
  */
 
 #include "SList.h"
+#include "SLNode.h"
 
 #include <cassert>
 #include <cstdlib>
@@ -21,7 +22,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -35,7 +36,7 @@ void unittest ()
 {
 	cout << "\nSTARTING UNIT TEST\n\n";
 
-	SList list;
+	SLList list;
 
 	try {
 		btassert<bool>(list.getSize() == 0);

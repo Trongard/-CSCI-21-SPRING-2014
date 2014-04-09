@@ -1,29 +1,29 @@
-Declare and implement a class that provides the following interface EXACTLY.
+#pragma once
 
-class SList
+#include"SLNode.h"
+
+#include <cstdlib>
+#include <sstream>
+using namespace std;
+
+class SLList
 {
 
-public function interface:
+public:
 
-	SList();//sets values head(NULL) and size(0)
+	SLList();
+	virtual ~SLList();
 	
-	~SList();// calls the clear function
+	void insertHead (int value);
+	void removeHead ();
 	
-	void insertHead (int);//create a new SLNode and attach as head of list
-	
-	void removeHead ();//remove the head node from the list
-	
-	void clear ();//clear the entire contents of the list, freeing all memory
-	             //associated with all nodes
+	void clear ();
 	
 	unsigned int getSize () const;
 	
-	string toString () const;//return a string representation of the contents
-	                         // of all nodes in the list, in the format
-	                         // NUM1,NUM2,...,LASTNUM; return empty string on 
-	                         // empty list
+	string toString () const;
 	                         
-private data members:
+private:
 
 	SLNode* head;
 	unsigned int size;
