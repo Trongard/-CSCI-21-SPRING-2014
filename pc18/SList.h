@@ -9,7 +9,7 @@ using namespace std;
 class SLList
 {
 
-public function interface:
+public:
 
 	SLList();//sets values head(NULL) and size(0)
 	virtual ~SLList();// calls the clear function
@@ -27,7 +27,7 @@ public function interface:
 	                         // NUM1,NUM2,...,LASTNUM; return empty string on 
 	                         // empty list
 	                         
-private data members:
+private:
 
 	SLNode* head;
 	unsigned int size;
