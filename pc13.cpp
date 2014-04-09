@@ -83,6 +83,15 @@ int main ()
 
 // CODE HERE -- FUNCTION DEFINITIONS
 
+//
+// Grader comments 2014.03.13
+//
+// We're in an academic environment, so it's not a big deal, but
+// you'll want to make your variable names as meaningful as possible.
+// ds1 would be problematic for a couple of reasons. First, it's not
+// very descriptive, but perhaps more importantly, your reader could
+// easily mistake it for "DSL" and be confused about its meaning.
+//
 string* makeDynoString (string contents)
 {
     string* dynoStringOne = new string(contents);
@@ -115,6 +124,25 @@ unsigned int countChars (string* theString, unsigned int& alpha, unsigned int& n
         return (*theString).length();
 }
 
+//
+// Grader comments 2014.03.13
+//
+// This function and the one above show a good reason for using braces for
+// all code blocks, even if the language allows you to leave braces off. In
+// findWord(), you have a multi-line construct that happens only if you hit the
+// "else". But in countChars(), your "else" applies only to "alpha = 0;"
+// -- the rest of countChars() happens unconditionally. It's just luck that it
+// didn't break the unit test. I always advise those who care to hear my advice to
+// use braces on all such constructs even if the language makes them optional,
+// and even if the construct has only one line in it, as in the following:
+//
+// if(theString == NULL) {
+//     throw ArrayException("NULL STRING REFERENCE");
+// }
+//
+// No points deducted this time, but Boyd would probably consider lines 115 - 124
+// as bad formatting at the very least.
+//
 bool findWord (string* theString, string theWord)
 {
     if(theString == NULL)
