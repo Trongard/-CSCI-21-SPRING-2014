@@ -13,5 +13,4 @@ clean:
 	rm -f *.o
 	
 cleanall: clean
-	clean
 	rm -f project
