@@ -4,7 +4,7 @@
  *
  * Robert McAnulty
  * Date created: 09Apr14
- * Last date modified: 09Apr14
+ * Last date modified: 10Apr14
  *
  * SOURCES: challenge-18-spec.txt, challenge-18-unittest.cpp
  */
