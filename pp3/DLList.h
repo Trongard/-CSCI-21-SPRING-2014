@@ -22,5 +22,7 @@ class DLList
         void clear (); //clear all nodes from list, reset count to zero, set head and tail to NULL
         friend ostream& operator<< (ostream& out, const DLList& src); //display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
     private:
-        data members: count of nodes, pointer to head node, pointer to tail node
+        unsigned int size;//data members: count of nodes, pointer to head node, pointer to tail node
+        DLNode* head;
+        DLNode* tail;
 }
