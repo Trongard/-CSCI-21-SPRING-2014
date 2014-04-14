@@ -1,7 +1,5 @@
 #include"SList.h"
-
-#include <iostream>
-using namespace std;
+#include "SLNode.h"
 
 SList::SList()
 :head(NULL), size(0)
@@ -14,7 +12,7 @@ SList::~SList()
     clear();
 }// calls the clear function
 
-void SList::insertHead(int)
+void SList::insertHead(int value)
 {
     SLNode* newNode = new SLNode(value);
     newNode->setNextNode(head);
@@ -22,12 +20,23 @@ void SList::insertHead(int)
     size++;
 }// create a new SLNode and attach as head of list
 
-void SList::insertTail(int)
+void SList::insertTail(int value)
 {
-    SLNode* newNode = new SLNode(value);
-    newNode->setNextNode(head);
-    head = newNode;
-    size++;
+    if(head == NULL)
+    {
+        insertHead(value);
+    }
+    else
+    {
+        SLNode* newNode = new SLNode(value);
+        SLNode* temp = head;
+        while(temp->getNextNode() != NULL)
+        {
+            temp = temp->getNextNode();
+        }
+        temp->setNextNode(newNode);
+        size++;
+    }
 }// create a new SLNode and attach at the end of list
 
 void SList::removeHead()

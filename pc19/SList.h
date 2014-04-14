@@ -1,7 +1,7 @@
 #pragma once
 
 #include"SLNode.h"
-
+#include <iostream>
 #include <cstdlib>
 #include <sstream>
 using namespace std;
@@ -34,4 +34,4 @@ private:
 
 	SLNode* head;// that points to the first node in a singly-linked list
 	unsigned int size;// the count of the number of nodes in the list
-}
+};

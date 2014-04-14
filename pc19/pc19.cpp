@@ -1,6 +1,6 @@
 /*
  * CSCI 21 Programming Challenge #19
- * B.
+ * Working with double-linked lists.
  *
  * Robert McAnulty
  * Date created: 14Apr14
