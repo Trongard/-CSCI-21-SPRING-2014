@@ -1,16 +1,17 @@
 #pragma once
 
-#include"SLNode.h"
+#include "SLNode.h"
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
 using namespace std;
 
 class SList
+{
     public:
-    	SList;// sets values head(NULL) and size(0)
+    	SList();// sets values head(NULL) and size(0)
     	
-    	virtual ~SList;// calls the clear function
+    	virtual ~SList();// calls the clear function
     	
     	void insertHead (int);// create a new SLNode and attach as head of list
     	void insertTail (int);// create a new SLNode and attach at the end of list
@@ -38,4 +39,4 @@ class SList
     private:
     	SLNode* head;// that points to the first node in a singly-linked list
     	unsigned int size;// the count of the number of nodes in the list
-
+};

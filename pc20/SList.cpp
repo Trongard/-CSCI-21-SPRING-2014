@@ -1,12 +1,12 @@
 #include "SList.h"
 
-SList::SList
+SList::SList()
 :head(NULL), size(0)
 {
     
 }// sets values head(NULL) and size(0)
 
-SList::~SList
+SList::~SList()
 {
     clear();
 }// calls the clear function
@@ -35,6 +35,7 @@ void SList::insertTail (int value)
         }
         temp->setNextNode(newNode);
         size++;
+    }
 }// create a new SLNode and attach at the end of list
 
 void SList::removeHead ()
@@ -82,17 +83,17 @@ void SList::insert (int value)
         if(value < head->getContents())
             insertHead(value);
         else
-            insertTail(value;
+            insertTail(value);
     }
     else
     {
-        if(value < head->getContents())
+        if(value <= head->getContents())
             insertHead(value);
         else
         {
             SLNode* trailer = NULL;
             SLNode* spot = head;    
-            while(spot->getNextNode() != NULL && value < spot->getContents())
+            while(spot->getNextNode() != NULL && value > spot->getContents())
             {
                 trailer = spot;
                 spot = spot->getNextNode();
