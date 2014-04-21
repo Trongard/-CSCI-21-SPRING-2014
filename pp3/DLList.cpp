@@ -1,78 +1,113 @@
 #include "DLList.h"
 #include "DLNode.h"
 
+//initialize count to zero, head and tail to NULL
 DLList ()
 :count(0),head(NULL),tail(NULL)
 {
     
-}//initialize count to zero, head and tail to NULL
+}
 
+//call clear function
 virtual ~DLList ()
 {
-    
-}//call clear function
+    clear();
+}
 
+//return count
 unsigned int getSize () const
 {
     return count;
-}//return count
+}
 
+//create new DLNode with newContents and attach at head
 void pushFront (int newContents)
 {
-    
-}//create new DLNode with newContents and attach at head; *should not be called in conjunction with insert
+    DLNode* 
+}
 
+//create new DLNode with newContents and attach at tail
 void pushBack (int newContents)
 {
     
-}//create new DLNode with newContents and attach at tail; *should not be called in conjunction with insert
+}
 
+//create new DLNode with newContents and insert in ascending (based on newContents) order
 void insert (int newContents)
 {
     
-}//create new DLNode with newContents and insert in ascending (based on newContents) order; *should not be called in conjunction with pushFront or pushBack
+}
 
+//return the value of the contents of the head node; throw an exception (throw "LIST EMPTY") if the list is empty
 int getFront () const
 {
-    
-}//return the value of the contents of the head node; throw an exception (throw "LIST EMPTY") if the list is empty
+    if(count == 0)
+    {
+        throw ArrayException("LIST EMPTY");
+    }
+    else
+    {
+        return head.contents;
+    }
+}
 
+//return the value of the contents of the tail node; throw an exception (throw "LIST EMPTY") if the list is empty
 int getBack () const
 {
-    
-}//return the value of the contents of the tail node; throw an exception (throw "LIST EMPTY") if the list is empty
+    if(count == 0)
+    {
+        throw ArrayException("LIST EMPTY");
+    }
+    else
+    {
+        return tail.contents;
+    }
+}
 
+//return true if target is in list, else return false
 bool get (int target) const
 {
-    
-}//return true if target is in list, else return false
+    if()
+        return true;
+    else
+        return false;
+}
 
+//remove current head node; do nothing if list is empty
 void popFront ()
 {
     
-}//remove current head node; do nothing if list is empty
+}
 
+//remove current tail node; do nothing if list is empty
 void popBack ()
 {
     
-}//remove current tail node; do nothing if list is empty
+}
 
+//remove the first instance of a DLNode containing target; do nothing if target is not found
 bool removeFirst (int target)
 {
     
-}//remove the first instance of a DLNode containing target; do nothing if target is not found
+}
 
+//remove all instances of DLNode containing target; do nothing if target is not found
 bool removeAll (int target)
 {
     
-}//remove all instances of DLNode containing target; do nothing if target is not found
+}
 
+//clear all nodes from list, reset count to zero, set head and tail to NULL
 void clear ()
 {
     
-}//clear all nodes from list, reset count to zero, set head and tail to NULL
+    count = 0;
+    head = NULL;
+    tail = NULL;
+}
 
+//display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
 friend ostream& operator<< (ostream& out, const DLList& src)
 {
-    
-}//display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
+    out << src.contents;
+}
