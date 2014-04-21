@@ -149,3 +149,4 @@ void btassert (A assertion)
 {
     if (!assertion)
 		throw X();
+}

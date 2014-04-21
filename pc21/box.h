@@ -6,7 +6,7 @@ using namespace std;
 template<class T>
 class Box {
     public:
-        Box(T contents)
+        Box(T newContents)
         {
             contents = newContents;
         }
@@ -21,9 +21,10 @@ class Box {
             return contents;
         }
         
-        friend bool operator
+        friend ostream& operator<<(ostream& out, Box temp)
         {
-            
+            out << temp.contents;
+            return out;
         }
     
     private:
