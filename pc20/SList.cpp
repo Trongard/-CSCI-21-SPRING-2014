@@ -110,7 +110,7 @@ void SList::insert (int value)
                 size++;
             }
         }
-}
+    }
 }// create a new SLNode and insert it in the correct position
                    // in the list so that the values in the nodes are in 
                    // ascending order from head node to tail node
