@@ -1,10 +1,10 @@
 FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
-project-2: Prize.o Box.o project-2.o
-	g++ $(FLAGS) Prize.o Box.o project-2.o -o project-2
+project-3: Prize.o Box.o project-3.o
+	g++ $(FLAGS) Prize.o Box.o project-3.o -o project-3
 
-project-2.o: pp2.cpp 
-	g++ -c $(FLAGS) pp2.cpp -o project-2.o
+project-3.o: pp3.cpp 
+	g++ -c $(FLAGS) pp3.cpp -o project-3.o
 
 Box.o: box.h box.cpp
 	g++ -c $(FLAGS) box.cpp -o Box.o

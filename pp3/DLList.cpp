@@ -23,18 +23,26 @@ unsigned int getSize () const
 //create new DLNode with newContents and attach at head
 void pushFront (int newContents)
 {
-    DLNode* newContents;
+    DLNode* temp = newContents;
+    head.setPrevious = temp;
+    temp.setNext = head.getNext;
 }
 
 //create new DLNode with newContents and attach at tail
 void pushBack (int newContents)
 {
     DLNode* newContents;
+    tail.setNext = temp;
+    temp.setPrevious = tail.getPrevious;
 }
 
 //create new DLNode with newContents and insert in ascending (based on newContents) order
 void insert (int newContents)
 {
+    if(newContents < )
+    {
+        
+    }
     DLNode* newContents;
 }
 
@@ -67,7 +75,7 @@ int getBack () const
 //return true if target is in list, else return false
 bool get (int target) const
 {
-    if()
+    if(target in)
         return true;
     else
         return false;
@@ -76,13 +84,43 @@ bool get (int target) const
 //remove current head node; do nothing if list is empty
 void popFront ()
 {
-    
+    temp = head;
+    if(head == NULL)
+        //No operation
+    else if(head == tail)
+    {
+        head = tail = NULL;
+        delete temp;
+        count--;
+    }
+    else
+    {
+        head = head->getNext;
+        head.setPrevious=NULL;
+        delete temp;
+        count--;
+    }
 }
 
 //remove current tail node; do nothing if list is empty
 void popBack ()
 {
-    
+    temp = tail;
+    if(head == NULL)
+        //No operation
+    else if(head == tail)
+    {
+        head = tail = NULL;
+        delete temp;
+        count--;
+    }
+    else
+    {
+        tail = tail->getPrevious;
+        tail.setNext=NULL;
+        delete temp;
+        count--;
+    }
 }
 
 //remove the first instance of a DLNode containing target; do nothing if target is not found
@@ -100,7 +138,6 @@ bool removeAll (int target)
 //clear all nodes from list, reset count to zero, set head and tail to NULL
 void clear ()
 {
-    
     count = 0;
     head = NULL;
     tail = NULL;
@@ -110,4 +147,5 @@ void clear ()
 friend ostream& operator<< (ostream& out, const DLList& src)
 {
     out << src.contents;
+    return out;
 }
