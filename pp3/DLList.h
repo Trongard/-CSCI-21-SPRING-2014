@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include "DLNode.h"
+
 using namespace std;
 
 class DLList
@@ -25,4 +27,4 @@ class DLList
         unsigned int size;//data members: count of nodes, pointer to head node, pointer to tail node
         DLNode* head;
         DLNode* tail;
-}
+};

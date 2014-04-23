@@ -24,4 +24,4 @@ class DLNode
         DLNode* previous;
         int contents;
         
-}
+};
