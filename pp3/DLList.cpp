@@ -23,19 +23,19 @@ unsigned int getSize () const
 //create new DLNode with newContents and attach at head
 void pushFront (int newContents)
 {
-    DLNode* 
+    DLNode* newContents;
 }
 
 //create new DLNode with newContents and attach at tail
 void pushBack (int newContents)
 {
-    
+    DLNode* newContents;
 }
 
 //create new DLNode with newContents and insert in ascending (based on newContents) order
 void insert (int newContents)
 {
-    
+    DLNode* newContents;
 }
 
 //return the value of the contents of the head node; throw an exception (throw "LIST EMPTY") if the list is empty
