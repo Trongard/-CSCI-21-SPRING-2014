@@ -36,15 +36,19 @@ int main()
                     break;
             //create list: 
                 case 'C':
+                    DLList();
                     break;
             //clear list: 
                 case 'X':
+                    ~DLList();
                     break;
             //delete list: 
                 case 'D':
+                    ~DLList();
                     break;
             //insert element in list (sorted): I number (number will be an int value)
                 case 'I':
+                    insert();
                     break;
             //add element to front of list: F number (number will be an int value)
                 case 'F':
@@ -72,15 +76,23 @@ int main()
                     break;
             //eliminate element from list: E number (number will be the value to be eliminated -- eliminate all occurrences of the value from the list)
                 case 'E':
-                    break;//remove element from list: R number (number will be the value to be removed -- remove only the first occurrence of the value from the list)
+                    removeAll();
+                    break;
+            //remove element from list: R number (number will be the value to be removed -- remove only the first occurrence of the value from the list)
                 case 'R':
-                    break;//get element from list: G number (number will be the value to be retrieved)
+                    removeFirst();
+                    break;
+            //get element from list: G number (number will be the value to be retrieved)
                 case 'G':
-                    break;//show number of items in the list: 
+                    get();
+                    break;
+            //show number of items in the list: 
                 case 'N':
+                    return size;
                     break;
             //print all items in the list: 
                 case 'P':
+                    
                     break;
             }
         }

@@ -59,11 +59,14 @@ void DLList::pushBack (int newContents)
 //create new DLNode with newContents and insert in ascending (based on newContents) order
 void DLList::insert (int newContents)
 {
-    if(newContents < 0)
+    if(newContents <= newContents->getNext())
     {
-        
+        pushFront(newContents);
     }
-    DLNode* newNode = new DLNode(newContents);
+    else
+    {
+        pushBack(newContents);
+    }
 }
 
 //return the value of the contents of the head node; throw an exception (throw "LIST EMPTY") if the list is empty
@@ -106,7 +109,7 @@ void DLList::popFront ()
 {
     DLNode* temp = head;
     if(head == NULL)
-        //No operation
+        cout << "No operation" << endl;
     else if(head == tail)
     {
         head = tail = NULL;
@@ -115,8 +118,8 @@ void DLList::popFront ()
     }
     else
     {
-        head = head->getNext;
-        head.setPrevious=NULL;
+        head = head->getNext();
+        head->setPrevious(DLNode) = NULL;
         delete temp;
         size--;
     }
@@ -149,7 +152,7 @@ void DLList::popBack ()
     
     DLNode* temp = tail;
     if(head == NULL)
-        //No operation
+        cout << "No operation" << endl;
     else if(head == tail)
     {
         head = tail = NULL;
@@ -158,8 +161,8 @@ void DLList::popBack ()
     }
     else
     {
-        tail = tail->getPrevious;
-        tail.setNext=NULL;
+        tail = tail->getPrevious();
+        tail->setNext(DLNode) = NULL;
         delete temp;
         size--;
     }
@@ -168,27 +171,27 @@ void DLList::popBack ()
 //remove the first instance of a DLNode containing target; do nothing if target is not found
 bool DLList::removeFirst (int target)
 {
-    
+    return true;
 }
 
 //remove all instances of DLNode containing target; do nothing if target is not found
 bool DLList::removeAll (int target)
 {
-    
+    return true;
 }
 
 //clear all nodes from list, reset size to zero, set head and tail to NULL
 void DLList::clear ()
 {
     while(head != NULL)
-        removeFirst();
+        removeFirst(int);
     size = 0;
     head = NULL;
     tail = NULL;
 }
 
 //display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
-friend ostream& operator<< (ostream& out, const DLList& src)
+ostream& operator<< (ostream& out, const DLList& src)
 {
     out << src.contents;
     return out;
