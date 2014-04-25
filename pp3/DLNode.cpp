@@ -17,7 +17,8 @@ DLNode::DLNode (int newContents)
 // nothing to be done
 DLNode::~DLNode ()
 {
-    
+    next = NULL;
+    previous = NULL;
 }
 
 void DLNode::setContents (int newContents)

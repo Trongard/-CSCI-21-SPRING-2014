@@ -59,14 +59,43 @@ void DLList::pushBack (int newContents)
 //create new DLNode with newContents and insert in ascending (based on newContents) order
 void DLList::insert (int newContents)
 {
-    if(newContents <= newContents->getNext())
+    if (head!= NULL)
+    {
+        cout << head->getContents() << endl;
+        cout << head->getPrevious()->getContents() << endl;
+        cout << head->getNext()->getContents() << endl;
+    }
+    
+    if(head == NULL || newContents < head->getContents())
     {
         pushFront(newContents);
+        return;
     }
-    else
+    
+    DLNode* temp = head;
+    
+    while(temp->getNext() != NULL)
     {
-        pushBack(newContents);
+        DLNode* nextTemp = temp->getNext();
+        if(nextTemp->getContents() > newContents)
+        {
+            cout << "inserting here" << endl;
+            
+            DLNode* inserted = new DLNode(newContents);
+            
+            inserted->setPrevious(temp);
+            inserted->setNext(nextTemp);
+            
+            temp->setNext(inserted);
+            nextTemp->setPrevious(inserted);
+            
+            size++;
+            return;
+        }
+        temp = temp->getNext();
     }
+    cout << "interted at end" << endl;
+        pushBack(newContents);
 }
 
 //return the value of the contents of the head node; throw an exception (throw "LIST EMPTY") if the list is empty
@@ -98,10 +127,23 @@ int DLList::getBack () const
 //return true if target is in list, else return false
 bool DLList::get (int target) const
 {
-    if(target)
-        return true;
-    else
+    if(head == NULL)
+    {
         return false;
+    }
+    else
+    {
+        DLNode* temp = head;
+        while(temp->getNext() != NULL)
+        {
+            if(temp->getContents() == target || temp->getNext()->getContents() == target)
+            {
+                return true;
+            }
+            temp = temp->getNext();
+        }
+        return false;
+    }
 }
 
 //remove current head node; do nothing if list is empty
@@ -109,7 +151,7 @@ void DLList::popFront ()
 {
     DLNode* temp = head;
     if(head == NULL)
-        cout << "No operation" << endl;
+        return;
     else if(head == tail)
     {
         head = tail = NULL;
@@ -119,80 +161,123 @@ void DLList::popFront ()
     else
     {
         head = head->getNext();
-        head->setPrevious(DLNode) = NULL;
+        head->setPrevious(NULL);
         delete temp;
         size--;
+    }
+    if(size == 1)
+    {
+        tail = head;
     }
 }
 
 //remove current tail node; do nothing if list is empty
 void DLList::popBack ()
 {
-    if(head != NULL)
-    {
-        DLNode* i = head;
-        DLNode* trailer = NULL;
-        
-        while(i->getNext() != NULL)
-        {
-            trailer = i;
-            i = i->getNext();
-        }
-        delete i;
-        size--;
-        if(trailer == NULL)
-        {
-            head = NULL;
-        }
-        else
-        {
-            trailer->setNext(NULL);
-        }
-    }
-    
-    DLNode* temp = tail;
-    if(head == NULL)
-        cout << "No operation" << endl;
+    if(tail == NULL)
+        return;
     else if(head == tail)
     {
         head = tail = NULL;
-        delete temp;
+        delete head;
         size--;
     }
     else
     {
+        DLNode* temp = tail;
         tail = tail->getPrevious();
-        tail->setNext(DLNode) = NULL;
+        tail->setNext(NULL);
+        
         delete temp;
         size--;
+    }
+    if(size == 1)
+    {
+        head = tail;
     }
 }
 
 //remove the first instance of a DLNode containing target; do nothing if target is not found
 bool DLList::removeFirst (int target)
 {
-    return true;
+    if(head == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        DLNode* temp = head;
+        cout << temp->getNext()->getContents() << endl;
+        while(temp->getNext() != NULL)
+        {
+            cout << "here" << temp->getContents() << " , ";
+            if(temp->getContents() == target)
+            {
+                if(temp == head)
+                {
+                    popFront();
+                }
+                else if(temp == tail)
+                {
+                    popBack();
+                }
+                else
+                {
+                    temp->getPrevious()->setNext(temp->getNext());
+                    temp->getNext()->setPrevious(temp->getPrevious());
+                }
+                delete temp;
+                size--;
+                if(size == 1)
+                    {
+                        head = tail;
+                    }
+                return true;
+            }
+            temp = temp->getNext();
+        }
+        cout << "Exit while" << endl;
+        if(temp->getContents() == target)
+        {
+            cout << "Enter if" << endl;
+            popBack();
+            cout << "After pop" << endl;
+            return true;
+        }
+        return false;
+    }
 }
 
 //remove all instances of DLNode containing target; do nothing if target is not found
 bool DLList::removeAll (int target)
 {
-    return true;
+    bool temp = removeFirst(target);
+    while(removeFirst(target));
+    return temp;
 }
 
 //clear all nodes from list, reset size to zero, set head and tail to NULL
 void DLList::clear ()
 {
     while(head != NULL)
-        removeFirst(int);
+        popFront();
     size = 0;
     head = NULL;
     tail = NULL;
 }
 
 //display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
-ostream& operator<< (ostream& out, const DLList& src)
+ostream& operator<< (ostream& out, const DLList src)
 {
-    out << src.contents;
+    DLNode* temp = src.head;
+    while(temp != NULL)
+    {
+        out << temp->getContents();
+        temp = temp->getNext();
+        if(temp != NULL)
+        {
+            out << ",";
+        }
+    }
     return out;
 }

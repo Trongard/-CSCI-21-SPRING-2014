@@ -20,8 +20,7 @@ class DLNode
         DLNode* getPrevious () const;
         
     private:
+        int contents;
         DLNode* next;
         DLNode* previous;
-        int contents;
-        
 };
