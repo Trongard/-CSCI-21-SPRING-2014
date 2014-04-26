@@ -41,12 +41,12 @@ int DLNode::getContents () const
     return contents;
 }
 
-DLNode* DLNode::getNext () const
+DLNode*& DLNode::getNext ()
 {
     return next;
 }
 
-DLNode* DLNode::getPrevious () const
+DLNode*& DLNode::getPrevious ()
 {
     return previous;
 }

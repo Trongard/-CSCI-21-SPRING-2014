@@ -36,6 +36,7 @@ int main()
             ss >> data;
             switch (nextline[0])
             {
+                
                 case '#':
                     break;
             //create list: 
@@ -83,8 +84,15 @@ int main()
                 case 'T':
                     if(listy != NULL)
                     {
-                        listy->popFront();
-                        cout << "REMOVED HEAD" << endl;
+                        try 
+                        {
+                             listy->popFront();
+                             cout << "REMOVED HEAD" << endl;
+                        }
+                        catch(...)
+                        {
+                            cout << "EMPTY LIST" << endl;
+                        }
                     }
                     else
                         cout << "LIST EMPTY" << endl;
@@ -93,8 +101,15 @@ int main()
                 case 'K':
                     if(listy != NULL)
                     {
-                        listy->popBack();
-                        cout << "REMOVED TAIL" << endl;
+                        try 
+                        {
+                             listy->popFront();
+                             cout << "REMOVED HEAD" << endl;
+                        }
+                        catch(...)
+                        {
+                            cout << "EMPTY LIST" << endl;
+                        }
                     }
                     else
                         cout << "LIST EMPTY" << endl;

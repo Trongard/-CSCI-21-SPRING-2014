@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
+#include <sstream>
 #include "DLNode.h"
 
 using namespace std;
