@@ -1,0 +1,41 @@
+# create first list
+C
+P
+I 77
+F 25
+B 5
+F 20
+B 5
+F 10
+F 25
+A
+N
+X
+P
+I 29
+Z
+I 25
+I 5
+I 50
+I 10
+I 70
+I 25
+I 25
+R 5
+E 25
+P
+G 1
+G 5
+G 25
+N
+P
+T
+K
+N
+P
+X
+K
+I 7
+P
+D
+X

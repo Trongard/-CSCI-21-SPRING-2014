@@ -100,26 +100,6 @@ pc15: pc15.cpp
 pc16: pc16.cpp
 	g++ $(FLAGS) -o pc16 pc16.cpp
 
-# Target for programming challenge 17
-# Date completed: 3-24-2014
-# pc17: pc17.cpp
-# 	g++ $(FLAGS) -o pc17 pc17.cpp
-
-# Target for programming challenge 18
-# Date completed: 3-24-2014
-# pc18: pc18.cpp
-# 	g++ $(FLAGS) -o pc18 pc18.cpp
-
-# Target for programming challenge 19
-# Date completed: 3-24-2014
-# pc19: pc19.cpp
-# 	g++ $(FLAGS) -o pc19 pc19.cpp
-
-# Target for programming challenge 20
-# Date completed: 3-24-2014
-# pc20: pc20.cpp
-# 	g++ $(FLAGS) -o pc20 pc20.cpp
-
 # Target for programming challenge 21
 # Date completed: 3-24-2014
 # pc21: pc21.cpp

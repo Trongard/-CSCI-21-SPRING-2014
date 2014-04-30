@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 class DLNode
@@ -16,12 +17,11 @@ class DLNode
         void setPrevious (DLNode* newPrevious);
         
         int getContents () const;
-        DLNode* getNext () const;
-        DLNode* getPrevious () const;
+        DLNode*& getNext ();
+        DLNode*& getPrevious ();
         
     private:
+        int contents;
         DLNode* next;
         DLNode* previous;
-        int contents;
-        
-}
+};
