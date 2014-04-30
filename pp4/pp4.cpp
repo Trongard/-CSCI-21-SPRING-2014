@@ -9,8 +9,8 @@
  * SOURCES: my pp3, etc.
  */
  
-//#include "DLList.h"
-//#include "DLNode.h"
+#include "BSTree.h"
+#include "Tword.h"
 
 #include <cstdlib>
 #include <fstream>
@@ -24,7 +24,7 @@ int main()
     cout << "Please input file to be opened: " << endl;
     
     ifstream fin("file.txt");
-    DLList* listy;
+    DLList* treey;
     
     if (fin.good())
     {
@@ -108,14 +108,14 @@ int main()
                     break;
             //print items in tree in-order 
                 case 'O':
-                    if(listy != NULL)
+                    if(treey != NULL)
                         cout << *treey << endl;
                     else
                         cout << "TREE EMPTY" << endl;
                     break;
             //print items in tree reverse in-order 
                 case 'E':
-                    if(listy != NULL)
+                    if(treey != NULL)
                         cout << *treey << endl;
                     else
                         cout << "TREE EMPTY" << endl;
