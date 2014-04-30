@@ -1,12 +1,14 @@
 
 //default constructor
-Word::Word
+Word::Word()
+:count(1)
 {
     
 }
 
 //overloaded constructor, with string parameter (representing the "word")
-Word::Word
+Word::Word(string newWord)
+:word(newWord),count(1)
 {
     
 }
@@ -14,7 +16,7 @@ Word::Word
 //destructor
 Word::~Word
 {
-    
+    clear();
 }
 
 string Word::getWord(word)
@@ -24,7 +26,7 @@ string Word::getWord(word)
 
 unsigned int Word::getCount(count)
 {
-    
+    return count;
 }
 
 void Word::setWord(word)
@@ -39,25 +41,25 @@ void Word::setCount(count)
 
 void Word::incCount(count)
 {
-    
+    count++;
 }
 
-friend ostream& operator== ()
+ostream& operator== ()
 {
     
 }
 
-friend ostream& operator< ()
+ostream& operator< ()
 {
     
 }
 
-friend ostream& operator> ()
+ostream& operator> ()
 {
     
 }
 
-friend ostream& operator<< ()
+ostream& operator<< ()
 {
     
 }
