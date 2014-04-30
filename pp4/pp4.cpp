@@ -39,23 +39,23 @@ int main()
                 
                 case '#':
                     break;
-            //create tree: o
+            //create tree
                 case 'C':
                     treey = new DLList;
-                    cout << "LIST CREATED" << endl;
+                    cout << "TREE CREATED" << endl;
                     break;
-            //clear tree: o
+            //clear tree
                 case 'X':
                     treey->clear();
-                    cout << "LIST CLEARED" << endl;
+                    cout << "TREE CLEARED" << endl;
                     break;
-            //delete tree: o
+            //delete tree
                 case 'D':
                     delete treey;
                     treey = NULL;
-                    cout << "LIST DELETED" << endl;
+                    cout << "TREE DELETED" << endl;
                     break;
-            //insert element in tree (sorted): I number (number will be an int value) o
+            //insert word in tree 
                 case 'I':
                     treey->insert(data);
                     cout << "VALUE " << data << " INSERTED" << endl;
@@ -74,7 +74,7 @@ int main()
                     {
                         cout << "TREE EMPTY" << endl;
                     }
-            //remove element from front of tree: o
+            //remove word from tree
                 case 'R':
                     if()
                     {
@@ -89,22 +89,22 @@ int main()
                         }
                         catch(...)
                         {
-                            cout << "EMPTY LIST" << endl;
+                            cout << "EMPTY TREE" << endl;
                         }
                     }
                     else
-                        cout << "LIST EMPTY" << endl;
+                        cout << "TREE EMPTY" << endl;
                     break;
-            //get element from tree: G number (number will be the value to be retrieved) o
+            //get word from tree 
                 case 'G':
                     if(treey->get(data))
-                        cout << "VALUE " << data << " FOUND" << endl;
+                        cout << "GOT " << word << count << endl;
                     else
-                        cout << "VALUE " << data << " NOT FOUND" << endl;
+                        cout << word << " NOT FOUND" << endl;
                     break;
-            //show number of items in the tree: o
+            //show number of items in the tree
                 case 'N':
-                    cout << "LIST SIZE IS " << treey->getSize() << endl;
+                    cout << "TREE SIZE IS " << treey->getSize() << endl;
                     break;
             //print items in tree in-order 
                 case 'O':
