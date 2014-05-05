@@ -8,8 +8,8 @@ BSTNode::BSTNode()
 }
 
 //overloaded constructor, int parameter assigned to contents
-BSTNode::BSTNode(int contents)
-:contents(newContents)
+BSTNode::BSTNode(int newContents)
+:leftChild(NULL), rightChild(NULL), contents(newContents)
 {
     
 }
@@ -21,9 +21,9 @@ BSTNode::~BSTNode()
     rightChild = NULL;
 }
 
-void BSTNode::setContents (int)
+void BSTNode::setContents (int newContents)
 {
-    
+    contents = newContents;
 }
 
 int BSTNode::getContents () const
@@ -36,14 +36,14 @@ int& BSTNode::getContents ()
     return contents;
 }
 
-void BSTNode::setLeftChild (BSTNode*)
+void BSTNode::setLeftChild (BSTNode* newLeftChild)
 {
-    
+    leftChild = newLeftChild;
 }
 
-void BSTNode::setRightChild (BSTNode*)
+void BSTNode::setRightChild (BSTNode* newRightChild)
 {
-    
+    rightChild = newRightChild;
 }
 
 BSTNode* BSTNode::getLeftChild () const

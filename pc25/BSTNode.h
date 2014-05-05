@@ -3,13 +3,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
+using namespace std;
 
 class BSTNode
 {
     public:
     
     	BSTNode();//default constructor, sets values leftChild(NULL), rightChild(NULL), and contents(0)
-    	BSTNode(int contents);//overloaded constructor, int parameter assigned to contents
+    	BSTNode(int newContents);//overloaded constructor, int parameter assigned to contents
     	
     	virtual ~BSTNode();//destructor, sets leftChild and rightChild to NULL
     	
