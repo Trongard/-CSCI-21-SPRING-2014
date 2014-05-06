@@ -1,6 +1,13 @@
 #include"SList.h"
 #include "SLNode.h"
 
+//
+// Grader comments 2014.04.16
+// 1. Don't duplicate comments
+// 2. Comments should go at the beginning of the function, not the end
+// No points deducted for daily assignments, but he wants me to be
+// stricter on the programming projects. --Rob
+//
 SList::SList()
 :head(NULL), size(0)
 {
