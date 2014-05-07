@@ -24,7 +24,7 @@ int main()
     cout << "Please input file to be opened: " << endl;
     
     ifstream fin("file.txt");
-    DLList* treey;
+    BSTNode* treey;
     
     if (fin.good())
     {
@@ -41,7 +41,7 @@ int main()
                     break;
             //create tree
                 case 'C':
-                    treey = new DLList;
+                    treey = new BSTNode;
                     cout << "TREE CREATED" << endl;
                     break;
             //clear tree
