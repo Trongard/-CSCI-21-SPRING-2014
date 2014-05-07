@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
+#include "BSTNode.h"
+
 using namespace std;
 
 class BSTree
@@ -31,7 +33,7 @@ class BSTree
     private:
 
         //that points to the root node of a binary search tree
-    	BSTNode* rooty; 
+    	BSTNode* root; 
     	
     	//the number of nodes in the tree
     	unsigned int size; 

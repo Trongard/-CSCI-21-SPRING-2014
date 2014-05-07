@@ -2,7 +2,7 @@
 
 //sets values rooty(NULL) and size(0)
 BSTree::BSTree()
-:rooty(NULL), size(0)
+:root(NULL), size(0)
 {
     
 }
@@ -13,16 +13,16 @@ BSTree::~BSTree()
     clear();
 }
 
-//calls private function insert(data, rooty)
-bool BSTree::insert (data)
+//calls private function insert(data, root)
+bool BSTree::insert (int datain)
 {
-    insert(data, rooty);
+    return insert(datain, root);
 }
 
-//call private function clear(rooty)
+//call private function clear(root)
 void BSTree::clear ()
 {
-    clear(rooty);
+    clear(root);
 }
 
 //
@@ -34,43 +34,52 @@ unsigned int BSTree::getSize () const
 //call private function inOrder(rooty)
 void BSTree::inOrder ()
 {
-    inOrder(rooty);
+    inOrder(root);
 }
 
 //create a new BSTNode and insert it into the tree, returns true; if integer is already in the true, does not insert, returns false
-bool BSTree::insert (data, rooty)
+bool BSTree::insert (int datain, BSTNode*& rooty)
 {
-    insert(data, rooty){
     if(rooty == NULL)
         {
-            rooty = new BSTNode(data);
+            rooty = new BSTNode(datain);
+            size++;
+            return true;
         }
-    else if(data < rooty->data)
+    else if(datain < rooty->getData())
         {
-            insert(data,rooty->leftChild)
+            return insert(datain,rooty->getLeftChild());
         }
-    else if(data > rooty->data)
+    else if(datain > rooty->getData())
         {
-            insert(data,rooty->rightChild)
+            return insert(datain,rooty->getRightChild());
         }
     else
-        cout << "Failed to enter! -- DUPLICATE!" << endl;
-        return false;
-}
+        {
+            //cout << "Failed to enter! -- DUPLICATE!" << endl;
+            return false;
+        }
 }
            
 //clear the entire contents of the tree, freeing all memory associated with all nodes
-void BSTree::clear (rooty)
+void BSTree::clear (BSTNode*& rooty)
 {
-    clear(rooty);
+    if(rooty != NULL)
+    {
+        clear(rooty->getLeftChild());
+        clear(rooty->getRightChild());
+        delete rooty;
+        rooty = NULL;
+        size--;
+    }
 }
            
 //print the data in all nodes in the tree, in ascending order, separate by spaces (there should be a space after the last output value)
-void BSTree::inOrder (rooty)
+void BSTree::inOrder (BSTNode* rooty)
 {
      if(rooty != NULL){
-        print Inorder(rooty->leftChild);
-        cout << rooty->data;
-        print Inorder(rooty->rightChild);
+        inOrder(rooty->getLeftChild());
+        cout << rooty->getData() << " ";
+        inOrder(rooty->getRightChild());
     }
 }

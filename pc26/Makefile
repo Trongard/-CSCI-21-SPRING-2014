@@ -1,6 +1,6 @@
 FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
-pc-26: BSTreet.o pc-26.o BSTNode.o
+pc-26: BSTree.o pc-26.o BSTNode.o
 	g++ $(FLAGS) BSTree.o pc-26.o BSTNode.o -o pc-26
 
 pc-26.o: pc26.cpp 
