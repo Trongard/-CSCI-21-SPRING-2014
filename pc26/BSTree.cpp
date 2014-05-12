@@ -31,7 +31,7 @@ unsigned int BSTree::getSize () const
     return size;
 }
 
-//call private function inOrder(rooty)
+//call private function inOrder(root)
 void BSTree::inOrder ()
 {
     inOrder(root);
