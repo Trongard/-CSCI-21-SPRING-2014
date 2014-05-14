@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//template T<>;
+template <class T>
 class BSTree
 {
     public:
@@ -26,9 +26,20 @@ class BSTree
             clear();
         }
 
-	
+	    //calls private function find
+	    bool find(T toFind)
+	    {
+	        return find(toFind, root);
+	    }
+	    
+	    //calls private function get
+	    BSTNode<T>* get(T toGet)
+	    {
+	        return get(toGet, root);
+	    }
+	    
 	    //calls private function insert(int, root)
-    	bool insert (int)
+    	bool insert (T datain)
     	{
             return insert(datain, root);
         }
@@ -54,17 +65,55 @@ class BSTree
     private:
 
         //that points to the root node of a binary search tree
-    	BSTNode* root; 
+    	BSTNode<T>* root;
     	
     	//the number of nodes in the tree
     	unsigned int size; 
-
+        
+        //return true if data is found, else false on failure
+        bool find(T toFind, BSTNode<T>* rooty)
+        {
+            if(rooty == NULL)
+            {
+                return false;
+            }
+            else if(rooty > toFind)
+            {
+                return find(toFind, rooty->getLeftChild());
+            }
+            else if(rooty < toFind)
+            {
+                return find(toFind, rooty->getRightChild());
+            }
+            else
+                return true;
+        }
+        
+        // get data -- return a pointer to the data on success or NULL failure 
+        BSTNode<T>* get(T toGet, BSTNode<T>* rooty)
+        {
+            if(rooty == NULL)
+            {
+                return NULL;
+            }
+            else if(rooty > toGet)
+            {
+                return get(toGet, rooty->getLeftChild());
+            }
+            else if(rooty < toGet)
+            {
+                return get(toGet, rooty->getRightChild());
+            }
+            else
+                return rooty;
+        }
+        
         //create a new BSTNode and insert it into the tree, returns true; if integer is already in the true, does not insert, returns false
-    	bool insert (int, BSTNode*&)
+    	bool insert (int datain, BSTNode<T>*& rooty)
     	{
             if(rooty == NULL)
                 {
-                    rooty = new BSTNode(datain);
+                    rooty = new BSTNode<T>(datain);
                     size++;
                     return true;
                 }
@@ -78,13 +127,12 @@ class BSTree
                 }
             else
                 {
-                    //cout << "Failed to enter! -- DUPLICATE!" << endl;
                     return false;
                 }
         }
 	               
 	    //clear the entire contents of the tree, freeing all memory associated with all nodes
-    	void clear (BSTNode*&)
+    	void clear (BSTNode<T>*& rooty)
     	{
             if(rooty != NULL)
             {
@@ -97,7 +145,7 @@ class BSTree
         }
 	               
 	    //print the data in all nodes in the tree, in ascending order, separate by spaces (there should be a space after the last output value)
-    	void inOrder (BSTNode*)
+    	void inOrder (BSTNode<T>* rooty)
     	{
              if(rooty != NULL){
                 inOrder(rooty->getLeftChild());
