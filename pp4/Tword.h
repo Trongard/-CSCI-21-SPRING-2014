@@ -15,8 +15,8 @@ class Word
         virtual ~Word();//destructor
         string getWord();
         unsigned int getCount();
-        void setWord();
-        void setCount();
+        void setWord(string);
+        void setCount(int);
         void incCount();
         friend bool operator== (Word, Word);
         friend bool operator< (Word, Word);

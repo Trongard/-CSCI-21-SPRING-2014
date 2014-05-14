@@ -15,9 +15,9 @@ Word::Word(string newWord)
 }
 
 //destructor
-Word::~Word
+Word::~Word()
 {
-    clear();
+    
 }
 
 string Word::getWord()
@@ -62,6 +62,6 @@ bool operator> (Word w1, Word w2)
 
 ostream& operator<< (ostream& outy, Word wordy)
 {
-    out << wordy.word;
-    return out;
+    outy << wordy.word;
+    return outy;
 }

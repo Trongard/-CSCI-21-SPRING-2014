@@ -6,7 +6,7 @@
  * Date created: 30Apr14
  * Last date modified: 14May14
  *
- * SOURCES: my pp3, pc21, pc25, etc.
+ * SOURCES: my pp3, pc21, pc25, pc27, etc.
  */
  
 #include "BSTree.h"
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
         while (getline(fin, nextline))
         {
             stringstream ss(nextline.substr(1));
-            int data = 0;
+            string data;
             ss >> data;
             switch (nextline[0])
             {
@@ -72,11 +72,11 @@ int main(int argc, char** argv)
                     }
                     else if(treey->find(data))
                     {
-                        cout << "FOUND " << word << endl;
+                        cout << "FOUND " << data << endl;
                     }
                     else
                     {
-                        cout << word << " NOT FOUND" << endl;
+                        cout << data << " NOT FOUND" << endl;
                     }
                     
             //remove word from tree -- remove: "REMOVED x", "x NOT FOUND", or "TREE EMPTY" if empty
@@ -85,7 +85,7 @@ int main(int argc, char** argv)
                         cout << "TREE EMPTY" << endl;
                     else
                     {
-                        if(remove(data))
+                        if(treey->remove(data))
                         {
                             cout << "REMOVED " << data << endl;
                         }
@@ -96,9 +96,9 @@ int main(int argc, char** argv)
             //get word from tree 
                 case 'G':
                     if(treey->get(data))
-                        cout << "GOT " << word << count << endl;
+                        cout << "GOT " << data << treey->get(data)->getData().getCount() << endl;
                     else
-                        cout << word << " NOT FOUND" << endl;
+                        cout << data << " NOT FOUND" << endl;
                     break;
             //show number of items in the tree
                 case 'N':
@@ -107,14 +107,14 @@ int main(int argc, char** argv)
             //print items in tree in-order 
                 case 'O':
                     if(treey != NULL)
-                        cout << *treey << endl;
+                        treey->inOrder();
                     else
                         cout << "TREE EMPTY" << endl;
                     break;
             //print items in tree reverse in-order 
                 case 'E':
                     if(treey != NULL)
-                        cout << *treey << endl;
+                        treey->reverseOrder();
                     else
                         cout << "TREE EMPTY" << endl;
                     break;

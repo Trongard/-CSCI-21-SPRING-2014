@@ -38,6 +38,12 @@ class BSTree
 	        return get(toGet, root);
 	    }
 	    
+	    //calls private function remove
+	    bool remove (T toRemove)
+	    {
+	        return remove(toRemove, root);
+	    }
+	    
 	    //calls private function insert(int, root)
     	bool insert (T datain)
     	{
@@ -61,6 +67,11 @@ class BSTree
     	{
             inOrder(root);
         }
+        
+        void reverseOrder ()
+    	{
+            reverseOrder(root);
+        }
 	
     private:
 
@@ -77,16 +88,63 @@ class BSTree
             {
                 return false;
             }
-            else if(rooty > toFind)
+            else if(rooty->getData() > toFind)
             {
                 return find(toFind, rooty->getLeftChild());
             }
-            else if(rooty < toFind)
+            else if(rooty->getData() < toFind)
             {
                 return find(toFind, rooty->getRightChild());
             }
             else
                 return true;
+        }
+        
+        //return true on success or false on failure
+	    bool remove (T toRemove, BSTNode<T>*& rootPtr)
+	    {
+            if (rootPtr == NULL)
+            {
+                return false;
+            }
+            else if (toRemove < rootPtr->getData())
+            {
+                return remove (toRemove, rootPtr->getLeftChild());
+            }
+            else if (toRemove > rootPtr->getData())
+            {
+                return remove (toRemove, rootPtr->getRightChild());
+            }
+            else
+            {
+                if(rootPtr->getLeftChild() == NULL)
+                {
+                    BSTNode<T>* oldPtr = rootPtr;
+                    rootPtr = rootPtr->getRightChild();
+                    delete oldPtr;
+                }
+                else
+                {
+                    removeMax(rootPtr->getData(), rootPtr->getLeftChild());
+                }
+                size--;
+                return true;
+            }
+        }
+        
+        void removeMax (T& target, BSTNode<T>*& rootPtr)
+        {
+            if(rootPtr->getRightChild() == NULL)
+            {
+                BSTNode<T>* maxNode = rootPtr;
+                target = rootPtr->getData();
+                rootPtr = rootPtr->getLeftChild();
+                delete maxNode;
+            }
+            else
+            {
+                removeMax(target, rootPtr->getLeftChild());
+            }
         }
         
         // get data -- return a pointer to the data on success or NULL failure 
@@ -96,11 +154,11 @@ class BSTree
             {
                 return NULL;
             }
-            else if(rooty > toGet)
+            else if(rooty->getData() > toGet)
             {
                 return get(toGet, rooty->getLeftChild());
             }
-            else if(rooty < toGet)
+            else if(rooty->getData() < toGet)
             {
                 return get(toGet, rooty->getRightChild());
             }
@@ -109,7 +167,7 @@ class BSTree
         }
         
         //create a new BSTNode and insert it into the tree, returns true; if integer is already in the true, does not insert, returns false
-    	bool insert (int datain, BSTNode<T>*& rooty)
+    	bool insert (T datain, BSTNode<T>*& rooty)
     	{
             if(rooty == NULL)
                 {
@@ -151,6 +209,15 @@ class BSTree
                 inOrder(rooty->getLeftChild());
                 cout << rooty->getData() << " ";
                 inOrder(rooty->getRightChild());
+            }
+        }
+        
+        void reverseOrder (BSTNode<T>* rooty)
+    	{
+             if(rooty != NULL){
+                reverseOrder(rooty->getRightChild());
+                cout << rooty->getData() << " ";
+                reverseOrder(rooty->getLeftChild());
             }
         }
 };
