@@ -24,7 +24,8 @@ class DLList
         bool removeFirst (int target); //remove the first instance of a DLNode containing target; do nothing if target is not found
         bool removeAll (int target); //remove all instances of DLNode containing target; do nothing if target is not found
         void clear (); //clear all nodes from list, reset count to zero, set head and tail to NULL
-        friend ostream& operator<< (ostream& out, const DLList src); //display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
+		// Rob changed DLList to DLList&; see notes in DLList.cpp
+        friend ostream& operator<< (ostream& out, const DLList& src); //display the contents of each node in the list, formatted per the program specification ("NUM1,NUM2,NUM3,...,NUMX"), to the output stream out
     private:
         unsigned int size;//data members: count of nodes, pointer to head node, pointer to tail node
         DLNode* head;
