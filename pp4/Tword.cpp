@@ -1,3 +1,4 @@
+#include "Tword.h"
 
 //default constructor
 Word::Word()
@@ -14,52 +15,53 @@ Word::Word(string newWord)
 }
 
 //destructor
-Word::~Word
+Word::~Word()
 {
-    clear();
+    
 }
 
-string Word::getWord(word)
+string Word::getWord()
 {
     return word;
 }
 
-unsigned int Word::getCount(count)
+unsigned int Word::getCount()
 {
     return count;
 }
 
-void Word::setWord(word)
+void Word::setWord(string newWord)
 {
-    
+    word = newWord;
 }
 
-void Word::setCount(count)
+void Word::setCount(int newCount)
 {
-    
+    count = newCount;
 }
 
-void Word::incCount(count)
+void Word::incCount()
 {
     count++;
 }
 
-ostream& operator== ()
+bool operator== (Word w1, Word w2)
 {
-    
+    return (w1.word == w2.word);
 }
 
-ostream& operator< ()
+bool operator< (Word w1, Word w2)
 {
-    
+    return (w1.word < w2.word);
 }
 
-ostream& operator> ()
+bool operator> (Word w1, Word w2)
 {
-    
+    return (w1.word > w2.word);
 }
 
-ostream& operator<< ()
+ostream& operator<< (ostream& outy, Word wordy)
 {
-    
+    outy << wordy.word;
+    return outy;
 }

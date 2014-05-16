@@ -4,12 +4,13 @@
  *
  * Robert McAnulty
  * Date created: 30Apr14
- * Last date modified: 05May14
+ * Last date modified: 14May14
  *
- * SOURCES: my pp3, pc21, pc25, etc.
+ * SOURCES: my pp3, pc21, pc25, pc27, etc.
  */
  
 #include "BSTree.h"
+#include "BSTNode.h"
 #include "Tword.h"
 
 #include <cstdlib>
@@ -19,12 +20,15 @@
 #include <string>
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
-    cout << "Please input file to be opened: " << endl;
-    
-    ifstream fin("file.txt");
-    BSTNode* treey;
+    if(argc == 1)
+    {
+        cout << "Enter file with call: ";
+        return 1;
+    }
+    ifstream fin(argv[1]);
+    BSTree<Word>* treey;
     
     if (fin.good())
     {
@@ -32,7 +36,7 @@ int main()
         while (getline(fin, nextline))
         {
             stringstream ss(nextline.substr(1));
-            int data = 0;
+            string data;
             ss >> data;
             switch (nextline[0])
             {
@@ -41,7 +45,7 @@ int main()
                     break;
             //create tree
                 case 'C':
-                    treey = new BSTNode;
+                    treey = new BSTree<Word>;
                     cout << "TREE CREATED" << endl;
                     break;
             //clear tree
@@ -62,45 +66,39 @@ int main()
                     break;
             //find word in tree
                 case 'F':
-                    if()
-                    {
-                        cout << "FOUND " << word << endl;
-                    }
-                    else if()
-                    {
-                        cout << word << " NOT FOUND" << endl;
-                    }
-                    else
+                    if(treey == NULL)
                     {
                         cout << "TREE EMPTY" << endl;
                     }
-            //remove word from tree
+                    else if(treey->find(data))
+                    {
+                        cout << "FOUND " << data << endl;
+                    }
+                    else
+                    {
+                        cout << data << " NOT FOUND" << endl;
+                    }
+                    
+            //remove word from tree -- remove: "REMOVED x", "x NOT FOUND", or "TREE EMPTY" if empty
                 case 'R':
-                    if()
-                    {
-                        cout << "REMOVED " << word << endl;
-                    }
-                    else if(treey != NULL)
-                    {
-                        try 
-                        {
-                             treey->removeWord();
-                             cout << "REMOVED HEAD" << endl;
-                        }
-                        catch(...)
-                        {
-                            cout << "EMPTY TREE" << endl;
-                        }
-                    }
-                    else
+                    if(treey == NULL)
                         cout << "TREE EMPTY" << endl;
+                    else
+                    {
+                        if(treey->remove(data))
+                        {
+                            cout << "REMOVED " << data << endl;
+                        }
+                        else
+                            cout << data << " NOT FOUND" << endl;
+                    }
                     break;
             //get word from tree 
                 case 'G':
                     if(treey->get(data))
-                        cout << "GOT " << word << count << endl;
+                        cout << "GOT " << data << treey->get(data)->getData().getCount() << endl;
                     else
-                        cout << word << " NOT FOUND" << endl;
+                        cout << data << " NOT FOUND" << endl;
                     break;
             //show number of items in the tree
                 case 'N':
@@ -109,14 +107,14 @@ int main()
             //print items in tree in-order 
                 case 'O':
                     if(treey != NULL)
-                        cout << *treey << endl;
+                        treey->inOrder();
                     else
                         cout << "TREE EMPTY" << endl;
                     break;
             //print items in tree reverse in-order 
                 case 'E':
                     if(treey != NULL)
-                        cout << *treey << endl;
+                        treey->reverseOrder();
                     else
                         cout << "TREE EMPTY" << endl;
                     break;
