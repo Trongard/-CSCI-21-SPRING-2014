@@ -1,7 +1,7 @@
 FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
 pc-28: item.o fooditem.o magicitem.o pc-28.o
-	g++ $(FLAGS) item.o pc-28.o -o pc-28
+	g++ $(FLAGS) item.o fooditem.o magicitem.o pc-28.o -o pc-28
 
 pc-28.o: pc28.cpp 
 	g++ -c $(FLAGS) pc28.cpp -o pc-28.o

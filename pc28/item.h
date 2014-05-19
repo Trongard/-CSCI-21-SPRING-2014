@@ -1,4 +1,10 @@
+#pragma once
+#include <string>
+#include <cstdlib>
+#include <sstream>
+#include <iostream>
 
+using namespace std;
 
 class Item
 {
@@ -9,17 +15,17 @@ class Item
     	
     public:
     
-    	Item();//one constructor, default arguments for name("item") and value(0)
+    	Item(string newName="item",unsigned int newValue=0);//one constructor, default arguments for name("item") and value(0)
     	
     	virtual ~Item();
     	
-    	setName();
-    	setValue();
+    	void setName(string);
+    	void setValue(unsigned int);
     	
-    	getName();
-    	getValue();
+    	string getName();
+    	unsigned int getValue();
     	
-    	toString(); //returns string with name and value
+    	string toString(); //returns string with name and value
     			    //format --  NAME, $VALUE
     	            //EXAMPLE -- shoes, $25
 };

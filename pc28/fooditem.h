@@ -1,3 +1,4 @@
+#pragma once
 #include "item.h"
 
 class FoodItem:public Item
@@ -10,20 +11,21 @@ class FoodItem:public Item
     	
     public:
     
-    	FoodItem(); //one constructor, default arguments for name("fooditem"), value(0), calories(0),
+    	FoodItem(string newName="fooditem", unsigned int newValue=0, unsigned int newCalories=0, string newUnitOfMeasure="nounits", float newUnits=0); 
+    	            //one constructor, default arguments for name("fooditem"), value(0), calories(0),
     	            //unitOfMeasure("nounits"), units(0); calls Item constructor
     	            //in its initialization section with name and value
     	virtual ~FoodItem();
     	
-    	setCalories();
-    	setUnitOfMeasure();
-    	setUnits();
+    	void setCalories(unsigned int);
+    	void setUnitOfMeasure(string);
+    	void setUnits(float);
     	
-    	getCalories();
-    	getUnitOfMeasure();
-    	getUnits();
+    	unsigned int getCalories();
+    	string getUnitOfMeasure();
+    	float getUnits();
     	
-    	toString();// returns string with name, value, units and unit of measure, calories; 
+    	string toString();// returns string with name, value, units and unit of measure, calories; 
     			   // units formatted to exactly two decimal places
     	           // (uses Item::toString in its implementation)
     			   // format -- NAME, $VALUE, UNITS UNITOFMEASURE, CALORIES calories
