@@ -19,7 +19,7 @@ void addItem (const Item& newItem)
  */
 void insertItem (const Item& newItem, unsigned int position)
 {
-    
+    chest.
 }
 
 /*
@@ -49,7 +49,7 @@ Item removeItem (unsigned int position) throw (string)
  */
 void clear ()
 {
-    
+    chest;
 }
 
 /*
@@ -58,7 +58,10 @@ void clear ()
  */
 bool empty () const
 {
-    
+    if(chest.empty())
+        return true;
+    else
+        return false;
 }
 
 /*
