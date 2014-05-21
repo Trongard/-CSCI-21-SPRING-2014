@@ -35,7 +35,7 @@ int main ()
     sort(shoplist.begin(), shoplist.end(), sortQuantitiesAscending);
     
     shoplist.erase(shoplist.begin());
-    cout << "Shopping list has " <<
+    cout << "Shopping list has " << shoplist.size() << " items." << endl;
     
     return 0;
 }
@@ -52,7 +52,7 @@ int main ()
         cout << "Integer vector not empty" << endl;
     
     for(unsigned int i=0; i<iv.size(); i++)
-        cout << iv[i] << "-" << endl;
+        cout << iv[i] << '-' << endl;
     
     iv.clear();
     

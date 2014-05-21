@@ -4,7 +4,7 @@
  * Add an item to the end of the chest.
  * @param newItem the item to be added to the end of the chest
  */
-void addItem (const Item& newItem)
+void TreasureChest::addItem (const Item& newItem)
 {
     chest.push_back(newItem);
 }
@@ -17,9 +17,9 @@ void addItem (const Item& newItem)
  * @param position the zero-indexed position where the insertion
  *        is to take place
  */
-void insertItem (const Item& newItem, unsigned int position)
+void TreasureChest::insertItem (const Item& newItem, unsigned int position)
 {
-    chest.
+    cout << newItem << position << endl;
 }
 
 /*
@@ -27,9 +27,10 @@ void insertItem (const Item& newItem, unsigned int position)
  * @param position the zero-indexed position of the item
  * @return a pointer to the item if position is valid, else NULL
  */
-const Item* getItem (unsigned int position)
+const Item* TreasureChest::getItem (unsigned int position)
 {
-    
+    cout << position << endl;
+    return 0;
 }
 
 /*
@@ -39,24 +40,25 @@ const Item* getItem (unsigned int position)
  * @throw string("ERROR: attempting remove at invalid position") if
  *        position is not valid
  */
-Item removeItem (unsigned int position) throw (string)
+Item TreasureChest::removeItem (unsigned int position) throw (string)
 {
-    
+    cout << position << endl;
+    return Item();
 }
 
 /*
  * Clear the chest of all items.
  */
-void clear ()
+void TreasureChest::clear ()
 {
-    chest;
+    chest.clear();
 }
 
 /*
  * Check to see if the chest is empty.
  * @return true if the chest is empty, else false
  */
-bool empty () const
+bool TreasureChest::empty () const
 {
     if(chest.empty())
         return true;
@@ -68,16 +70,16 @@ bool empty () const
  * Get the size/number of items currently in the chest.
  * @return an unsigned integer containing the current size of the chest
  */
-unsigned int getSize () const
+unsigned int TreasureChest::getSize () const
 {
-    
+    return chest.size();
 }
 
 /*
  * Sort the items in the chest by name, using the sort function 
  * from the C++ standard algorithm library.
  */
-void sortByName ()
+void TreasureChest::sortByName ()
 {
     
 }
@@ -86,7 +88,7 @@ void sortByName ()
  * Sort the items in the chest by value, using the sort function 
  * from the C++ standard algorithm library.
  */
-void sortByValue ()
+void TreasureChest::sortByValue ()
 {
     
 }
@@ -95,7 +97,7 @@ void sortByValue ()
  * Sort the items in the chest by quantity, using the sort function 
  * from the C++ standard algorithm library.
  */
-void sortByQuantity ()
+void TreasureChest::sortByQuantity ()
 {
     
 }
@@ -104,9 +106,11 @@ void sortByQuantity ()
  * Place the names of the items in the chest on the specified stream,
  * formatted as ITEM_NAME,ITEM_NAME,...ITEM_NAME
  */
-friend ostream& operator<< (ostream& outs, const TreasureChest& src)
+ostream& operator<< (ostream& outs, const TreasureChest& src)
 {
     
+    outs << src.;
+    return outs;
 }
 
 /*
@@ -115,7 +119,8 @@ friend ostream& operator<< (ostream& outs, const TreasureChest& src)
  */
 bool compareItemsByName (const Item& lsrc, const Item& rsrc)
 {
-    
+    cout << lsrc << rsrc << endl;
+    return true;
 }
 
 /*
@@ -124,7 +129,8 @@ bool compareItemsByName (const Item& lsrc, const Item& rsrc)
  */
 bool compareItemsByValue (const Item& lsrc, const Item& rsrc)
 {
-    
+    cout << lsrc << rsrc << endl;
+    return true;
 }
 
 /*
@@ -133,5 +139,6 @@ bool compareItemsByValue (const Item& lsrc, const Item& rsrc)
  */
 bool compareItemsByQuantity (const Item& lsrc, const Item& rsrc)
 {
-    
+    cout << lsrc << rsrc << endl;
+    return true;
 }

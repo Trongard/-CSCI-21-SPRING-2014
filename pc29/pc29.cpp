@@ -41,7 +41,7 @@ void unittest ()
 	
 	stringstream ss;
 	
-	const Item* ptrItem = NULL;
+//	const Item* ptrItem = NULL;
 	
 	Item testItems[5] = {
 		Item("ruby", 100, 1), 
@@ -84,7 +84,7 @@ void unittest ()
 	} catch (bool b) {
 		cout << "# FAILED TEST 4: addItem/empty/getSize/operator<< #\n";
 	}
-	
+	/*
 	ss.str("");
 	chest.addItem(testItems[1]);
 	ss << chest;
@@ -239,7 +239,7 @@ void unittest ()
 		cout << "# FAILED TEST 20: getItem at invalid position #\n";
 	}
 	
-	cout << "\nUNIT TEST COMPLETE\n\n";
+	cout << "\nUNIT TEST COMPLETE\n\n";*/
 }
 
 template <typename X, typename A>
