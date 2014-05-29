@@ -1,3 +1,7 @@
+//
+// Grader comments 2014.05.29
+// -5 points total
+//
 #include "Tword.h"
 
 //default constructor
@@ -62,6 +66,12 @@ bool operator> (Word w1, Word w2)
 
 ostream& operator<< (ostream& outy, Word wordy)
 {
-    outy << wordy.word;
+	//
+	// Grader comments 2014.05.29
+	// Should show the count for the word as well.
+	// Added code to get unit test to work.
+	// -5 points
+	//
+    outy << wordy.word << " " << wordy.count;
     return outy;
 }
