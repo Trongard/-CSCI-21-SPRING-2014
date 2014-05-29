@@ -108,11 +108,8 @@ void TreasureChest::sortByQuantity ()
  */
 ostream& operator<< (ostream& outs, const TreasureChest& src)
 {
-	//
-	// Grader comments 2014.05.24
-	// This doesn't compile.
-	//    
-    outs << src.;
+    
+    outs << src;
     return outs;
 }
 
