@@ -1,3 +1,7 @@
+//
+// Grader comments 2014.05.29
+// -35 points total
+//
 /*
  * CSCI 21 Programming Project #4
  * Using a binary search tree as a data structure.
@@ -38,6 +42,19 @@ int main(int argc, char** argv)
             stringstream ss(nextline.substr(1));
             string data;
             ss >> data;
+			
+			//
+			// Grader comments 2014.05.29
+			// Need "MUST CREATE TREE INSTANCE" for most
+			// commands when the tree is empty. Added some
+			// code here to get the unit test to run.
+			// -10 points
+			//
+			if((nextline[0] != '#') && (nextline[0] != 'C') && (treey == NULL)) {
+				cout << "MUST CREATE TREE INSTANCE" << endl;
+				continue;
+			}
+			
             switch (nextline[0])
             {
                 
@@ -61,8 +78,25 @@ int main(int argc, char** argv)
                     break;
             //insert word in tree 
                 case 'I':
+					//
+					// Grader comments 2014.05.29
+					// Should say "WORD", not "VALUE". Also, if the
+					// value is already there in the tree, the message
+					// should say "INCREMENTED" rather than "INSERTED".
+					// Added some code here to get the unit test to run.
+					// -5 points
+					//
+				{
+					bool const alreadyThere = (treey->get(data) != 0);
+					
                     treey->insert(data);
-                    cout << "VALUE " << data << " INSERTED" << endl;
+
+					if(alreadyThere == true) {
+						cout << "WORD " << data << " INCREMENTED" << endl;
+					} else {
+	                    cout << "WORD " << data << " INSERTED" << endl;
+					}
+				}
                     break;
             //find word in tree
                 case 'F':
@@ -81,6 +115,18 @@ int main(int argc, char** argv)
                     
             //remove word from tree -- remove: "REMOVED x", "x NOT FOUND", or "TREE EMPTY" if empty
                 case 'R':
+				//
+				// Grader comments 2014.05.29
+				// When treey == NULL, there is no tree. "TREE EMPTY" means that
+				// there is a tree, but there's nothing on it. Added some
+				// code here to get the unit test to run.
+				// -5 points
+				//
+				if(treey->getSize() == 0) {
+					cout << "TREE EMPTY" << endl;
+					continue;
+				}
+
                     if(treey == NULL)
                         cout << "TREE EMPTY" << endl;
                     else
@@ -95,6 +141,17 @@ int main(int argc, char** argv)
                     break;
             //get word from tree 
                 case 'G':
+				//
+				// Grader comments 2014.05.29
+				// Need to check for empty tree. Added some
+				// code here to get the unit test to run.
+				// -5 points
+				//
+				if(treey->getSize() == 0) {
+					cout << "TREE EMPTY" << endl;
+					continue;
+				}
+
                     if(treey->get(data))
                         cout << "GOT " << data << treey->get(data)->getData().getCount() << endl;
                     else
@@ -106,6 +163,17 @@ int main(int argc, char** argv)
                     break;
             //print items in tree in-order 
                 case 'O':
+				//
+				// Grader comments 2014.05.29
+				// When treey == NULL, there is no tree. "TREE EMPTY" means that
+				// there is a tree, but there's nothing on it. Added some
+				// code here to get the unit test to run.
+				// -5 points
+				//
+				if(treey->getSize() == 0) {
+					cout << "TREE EMPTY" << endl;
+					continue;
+				}
                     if(treey != NULL)
                         treey->inOrder();
                     else
@@ -113,6 +181,17 @@ int main(int argc, char** argv)
                     break;
             //print items in tree reverse in-order 
                 case 'E':
+				//
+				// Grader comments 2014.05.29
+				// When treey == NULL, there is no tree. "TREE EMPTY" means that
+				// there is a tree, but there's nothing on it. Added some
+				// code here to get the unit test to run.
+				// -5 points
+				//
+				if(treey->getSize() == 0) {
+					cout << "TREE EMPTY" << endl;
+					continue;
+				}
                     if(treey != NULL)
                         treey->reverseOrder();
                     else

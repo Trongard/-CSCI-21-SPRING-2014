@@ -1,3 +1,8 @@
+##
+## Grader comments 2014.05.15
+## cleanall option doesn't work
+## -10 points
+##
 FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
 project-3: DLList.o DLNode.o project-3.o

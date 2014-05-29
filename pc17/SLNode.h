@@ -3,6 +3,10 @@
 #include <cstdlib>
 using namespace std;
 
+//
+// Grader comments 2014.04.09
+// Need comments to document the functions here
+//
 class SLNode
 {
     public:

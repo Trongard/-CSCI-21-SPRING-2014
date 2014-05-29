@@ -1,3 +1,7 @@
+//
+// Grader comments 2014.05.29
+// -5 points total
+//
 //Declare and implement a class that provides the following interface EXACTLY.
 #pragma once
 
@@ -185,6 +189,15 @@ class BSTree
                 }
             else
                 {
+					//
+					// Grader comments 2014.05.29
+					// The node is already there, so you need to
+					// increment its word count. Added some code
+					// here to get the unit test to run.
+					// -5 points
+					//
+					BSTNode<T>* const theNode = get(datain);
+					theNode->getData().incCount();
                     return false;
                 }
         }
@@ -207,7 +220,7 @@ class BSTree
     	{
              if(rooty != NULL){
                 inOrder(rooty->getLeftChild());
-                cout << rooty->getData() << " ";
+                cout << rooty->getData() << "\n";
                 inOrder(rooty->getRightChild());
             }
         }
@@ -216,7 +229,7 @@ class BSTree
     	{
              if(rooty != NULL){
                 reverseOrder(rooty->getRightChild());
-                cout << rooty->getData() << " ";
+                cout << rooty->getData() << "\n";
                 reverseOrder(rooty->getLeftChild());
             }
         }
