@@ -109,7 +109,7 @@ void TreasureChest::sortByQuantity ()
 ostream& operator<< (ostream& outs, const TreasureChest& src)
 {
     
-    outs << src.;
+    outs << src;
     return outs;
 }
 
